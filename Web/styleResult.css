@@ -1,0 +1,445 @@
+* {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    font-family: "Woodford Bourne Regular", sans-serif;
+}
+
+/*---------------------------Navigator / Menu------------------------------*/
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: rgb(207, 40, 29);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:80px;
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(134, 25, 17));
+    opacity: 1;
+}
+
+.wilsterman-logo{
+    padding: 10px 20px 0px 20px;
+}
+
+.label-team{
+    padding: 20px 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.sponsor-menu{
+    padding: 16px 20px 10px 10px;
+}
+
+li {
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type: none;
+    float:right;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin: 30px 25px 0px 25px;
+}
+
+li a:hover {
+    opacity: 1;
+    border-bottom-style: solid;
+    border: 2px;
+    border-color: white;
+}
+
+.menu-space{
+    width: 120px;
+}
+
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________GAMES____________________________________________________
+________________________________________________________________________________________________________________________*/
+
+#border-games{
+    background-color: rgb(223, 26, 35);
+}
+
+.title-games{
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 185px 0px 90px;
+}
+
+.header-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.title-principal{
+    font-family: "Copperplate",fantasy;
+}
+
+
+#container-month-games{
+    background-color: rgb(247, 240, 240);
+    margin: 80px 50px 0px 50px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.month-game{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+    margin-bottom: 20px;
+}
+
+.game-buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list-games{
+    display: flex;
+    flex-direction: column;
+}
+
+.game{
+    background-color: white;
+    width: 400px;
+    height: 230px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.buttons-game{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.buttons-game button, .add-game{
+    height: 40px;
+    width: 250px;
+    margin: 10px;
+    margin-left: 50px;
+    background-color: rgb(134, 25, 17);
+    display: flex;
+    flex-direction: row;
+    color: white;
+    border-style: none;
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+.buttons-game button:hover{
+    opacity: 1;
+}
+
+button img{
+    width: 25px;
+    height: 25px;
+    margin: 6px 30px 0px 40px 
+}
+
+button p{
+    font-family: "Helvetica",Sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0px 0px 0px
+}
+
+.month-bigger{
+    width: 250px;
+    border-radius: 50px 0px 0px 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background-image: -webkit-linear-gradient(rgb(134, 25, 17),rgb(9, 64, 100));
+}
+
+.month-bigger p{
+    margin-top: 30px;
+    color: white;
+    font-family: "Copperplate",fantasy;
+    font-size: 60px;
+    text-align: center;
+}
+
+
+
+
+.game-header{
+    background-color: rgb(134, 25, 17);
+    width: 400px;
+    height: 45px;
+    border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tournament {
+    font-family: "Arial",sans-serif;
+    display: flex;
+    flex-direction: row;
+    padding-top: 3px;
+    padding-left: 3px;
+    border-style: none;
+    border: 1px;
+    border-bottom-style: solid;
+    border-color: rgb(186, 189, 192);
+    color: rgb(159, 161, 163);
+}
+
+.matchday p{
+    color: rgb(83, 84, 85);
+}
+
+.stage p, .matchday p{
+    padding-top: 10px;
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+}
+
+.matchday{
+    text-align: center;
+    width: 85px;
+}
+
+.stage {
+    width: 240px;
+}
+
+.date-day-month{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    color: white;
+}
+
+.date-day P{
+    font-size: 38px;
+    font-family: "Copperplate",fantasy;
+    color: white;
+    height: 35px;
+    width: 35px;
+    padding: 0px 10px 0px 10px;
+}
+
+.date-day-month{
+    padding: 5px;
+}
+
+.date-day-literal p{
+    font-size: 19px;
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.date-month p{
+    font-size: 13px;
+    font-family: "Helvetica",Sans-serif;
+    text-transform: uppercase;
+}
+
+.teams{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    padding-left: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.result-hour{
+    display: flex;
+    align-items: stretch;
+    width: 90px;
+    height: 45px;
+    align-items: center;
+    background-color: rgb(134, 25, 17);
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    color: white;
+    border-radius: 15px;
+}
+
+.local-goals, .away-goals, .versus{
+    font-size: 35px;
+    width: 30px;
+    text-align: center;
+}
+
+.two-points{
+    width: 10px;
+}
+
+.hour{
+    padding-left: 5px;
+}
+
+.local-goals p, .away-goals p, .versus p{
+    font-family: "Copperplate",fantasy;
+}
+
+.local-team, .away-team{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    align-items: center;
+}
+
+.team-name{
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.stadium{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-style: none;
+    border: 1px;
+    border-top-style: solid;
+    border-color: rgb(186, 189, 192);
+    font-size: 14px;
+    color: rgb(186, 189, 192);
+}
+
+.stadium-image{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.add-game img{
+    margin-right: 15px;
+}
+
+.add-game{
+    margin-top: 20px;
+    background-color: rgb(9, 64, 100);
+    opacity: 0.95;
+}
+
+.add-game:hover{
+    opacity: 1;
+}
+
+.filters{
+    display: flex;
+    font-display: row;
+    margin-left: 920px;
+}
+
+.tournament-icon img, .filter-icon img{
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    padding: 8px;
+}
+
+.tournament-icon{
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 12px;
+    border-style: none;
+    opacity: 0.95;
+    cursor: pointer;
+    background-color: rgb(134, 25, 17);
+    border-radius: 3px;
+}
+
+.filter-icon{
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 13px;
+    border-style: none;
+    opacity: 0.95;
+    cursor: pointer;
+    background-color: rgb(9, 64, 100);
+    border-radius: 3px;
+}
+
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________FOOTER___________________________________________________
+________________________________________________________________________________________________________________________*/
+
+
+
+footer {
+    background-color: rgb(223, 26, 35);
+    text-align: center;
+    background-image: -webkit-linear-gradient(rgb(223, 26, 35),rgb(9, 64, 100));
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+.title-footer p{
+    padding-top: 50px;
+    font-family: "Copperplate",fantasy;
+    font-size: 30px;
+}
+
+.other-links{
+    display: flex;
+    flex-direction: row;
+}
+
+.other-links div{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    text-align: left;
+    font-size: 11px;
+    font-weight:lighter;
+    padding-bottom: 4px;
+}
+
+.other-links .title-other-link{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-bottom: 5px;
+}
+
+.logo-footer{
+    padding-bottom: 50px;
+}
+
+.autor-rights{
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+
+.social-networks{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+
+.social-networks img{
+    padding: 20px;
+}
+

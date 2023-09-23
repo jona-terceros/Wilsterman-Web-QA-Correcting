@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilsterman</title>
+    <script src="./scriptNewRumor.js"></script>
+    <link rel="stylesheet" href="./styleNewRumor.css">
+</head>
+<body>
+
+    <!-----------------------------MENU------------------------------------------>
+
+    <div id= "menu">
+
+        <div class="wilsterman-logo">
+            <a href="./main.html" class="menu-logo">
+                <img src="./Images/Teams/Wilsterman.png" alt="Logo_Wilsterman" width="96px" height="60px">
+            </a>
+        </div>
+
+        <div class="label-team">
+            <p>Club Jorge Wilsterman</p>
+        </div>
+
+        <div class="menu-space">
+        </div>
+
+        <div class="menu-options">
+            <ul>
+                <li><a href="./players.html" target=>PLANTEL</a></li>
+                <li><a href="./rumors.html" target=>RUMORES</a></li>
+                <li><a href="#footer" target=>CLUB</a></li>
+            </ul>
+        </div>
+
+        <div class="sponsor-menu">
+            <a href="https://www.facebook.com/forteathletic/" class="sponsor-logo">
+                <img src="./Images/Sponsors/Mods/forte-azul.gif" alt="Logo_Forte" width="60px" height="48px">
+            </a>
+        </div>
+
+        <div class="sponsor-menu">
+            <a href="https://www.suzuki.com.bo/" class="sponsor-logo">
+                <img src="./Images/Sponsors/Mods/Suzuki-azul.gif" alt="Logo_Suzuki" width="60px" height="48px">
+            </a>
+        </div>
+
+    </div>     
+
+
+
+    <!--________________________________________________________________________________________________________________________-->
+    <!--_______________________________________________________________GAMES____________________________________________________-->
+    <!--________________________________________________________________________________________________________________________-->
+
+
+    <div id="border-games">
+       <div id="border-gray">
+            <div class="title-games" id="title-changer">
+                <p class="title-principal">Crear Nuevo Rumor de Transferencia</p>
+            </div>
+            <div id="edit-box">
+                <form id ="form-box" action="">
+                    <div class="price-header">
+                        <div class="price-input">
+                            <label for="price">Precio: </label>
+                            <input type="text" name="price" id="price">
+                        </div>
+
+                        <div class="divisa-list">
+                            <label for="divisa">Divisa: </label>
+                            <select name="divisa" id="divisa">
+                                <option>$</option>
+                                <option>Bol</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="type-transfer-variables">
+                        <div class="transfer">
+                            <label for="transfer">Torneo: </label>
+                            <select name="transfer" id="transfer">
+                                <option>Compra</option>
+                                <option>Cesión</option>
+                                <option>Cesión Opción Compra</option>
+                                <option>Cesión Compra Obligatoria</option>
+                                <option>Libre</option>
+                            </select>
+                        </div>
+                        <div class="variables">
+                            <label for="variables">Variables: </label>
+                            <input type="text" name="variables" id="variables">
+                        </div>
+                    </div>
+
+                    <div class="actors">
+                        <div class="player">
+                            <div class="standar-image" id="playerImage">
+                                <img src="./Images/Icons/player.png"  width="180px" height="180px"></img>
+                            </div>
+                            <div class="player-image">
+                                <input type="file" name="playerFile" id="playerFile">
+                            </div>
+                            <div class="player-name">
+                                <input type="text" name="playerName" id="playerName">
+                            </div>
+                        </div>
+
+                        <div class="in-out-ransfer">
+                            <img src="./Images/Icons/transferencia-color.gif"  width="150px" height="150px"></img>
+                        </div>
+
+                        <div class="target-team">
+                            <div class="standar-image" id="targetImage">
+                                <img src="./Images/Teams/estandar.png"  width="180px" height="180px"></img>
+                            </div>
+                            <div class="team-image">
+                                <input type="file" name="imageTarget" id="fileTarget">
+                            </div>
+                            <div class="team-name">
+                                <input type="text" name="target" id="target">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="ENVIAR" id="submit">
+                </form>
+            </div>
+       </div> 
+    </div>
+    
+
+    
+
+    <!--________________________________________________________________________________________________________________________-->
+    <!--_______________________________________________________________FOOTER___________________________________________________-->
+    <!--________________________________________________________________________________________________________________________-->
+
+
+   <footer id="footer">
+
+        <div class="title-footer">
+            <p>ASOCIADOS</p>
+        </div>
+        <div class="other-links">
+            <div class="news-footer">
+                <p class="title-other-link">Noticias</p>
+                <p>Boletín de Noticias</p>
+                <p>Pasión Aviadora</p>
+            </div>
+            <div class="games-footer">
+                <p class="title-other-link">Partidos</p>
+                <p>Clasificación</p>
+                <p>Estadísticas del equipo</p>
+            </div>
+            <div class="teams-footer">
+                <p class="title-other-link">Equipos</p>
+                <p>Masculino</p>
+                <p>Reserva</p>
+                <p>Femenino</p>
+            </div>
+            <div class="online-store-footer">
+                <p class="title-other-link">Tienda Online</p>
+                <p>Equipaciones</p>
+                <p>Jugadores</p>
+                <p>Nuevo</p>
+                <p>Reservas</p>
+                <p>Wilsterman Retro</p>
+                <p>Colecciones</p>
+            </div>
+            <div class="club">
+                <p class="title-other-link">Club</p>
+                <p>Palmarés</p>
+                <p>Historia</p>
+                <p>UnicoTetra App</p>
+            </div>
+        </div>
+
+        <div class="logo-footer">
+            <img src="./Images/Teams/Mods/wilster-blanco.gif" width="400px" height="400px">
+        </div>
+
+        <div class="social-networks">
+            <img src="./Images/Social Network/facebook.gif" width="40px" height="40px">
+            <img src="./Images/Social Network/instagram.gif" width="40px" height="40px">
+            <img src="./Images/Social Network/snapchat.gif" width="40px" height="40px">
+            <img src="./Images/Social Network/twitter.gif" width="40px" height="40px">
+            <img src="./Images/Social Network/youtube.gif" width="40px" height="40px">
+        </div>
+
+        <div class="autor-rights">
+            <p>© Club Deportivo Wilsterman 2022</p>
+        </div>
+    </footer>
+
+
+    
+</body>
+</html>

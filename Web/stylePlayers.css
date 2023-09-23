@@ -1,0 +1,369 @@
+* {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    font-family: "Woodford Bourne Regular", sans-serif;
+}
+
+/*---------------------------Navigator / Menu------------------------------*/
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: rgb(207, 40, 29);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:80px;
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(134, 25, 17));
+    opacity: 1;
+}
+
+.wilsterman-logo{
+    padding: 10px 20px 0px 20px;
+}
+
+.label-team{
+    padding: 20px 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.sponsor-menu{
+    padding: 16px 20px 10px 10px;
+}
+
+li {
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type: none;
+    float:right;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin: 30px 25px 0px 25px;
+}
+
+li a:hover {
+    opacity: 1;
+    border-bottom-style: solid;
+    border: 2px;
+    border-color: white;
+}
+
+.menu-space{
+    width: 120px;
+}
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________PLAYERS___________________________________________________
+________________________________________________________________________________________________________________________*/
+
+
+#border-players{
+    background-color: rgb(223, 26, 35);
+}
+
+#container-players{
+    background-color: rgb(247, 240, 240);
+    margin: 80px 50px 0px 50px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.title-players p{
+    font-family: "Copperplate",fantasy;
+}
+
+.title-players{
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 300px 0px 90px;
+    width: 560;
+}
+
+button img{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+}
+
+.transfer-buttons{
+    margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+.buttons button{
+    background-color: rgb(134, 25, 17);
+    margin: 5px;
+    border-style: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.buttons{
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons button:hover{
+    
+}
+
+
+.add-player{
+    height: 40px;
+    width: 250px;
+    background-color: rgb(9, 64, 100);
+    display: flex;
+    flex-direction: row;
+    color: white;
+    border-style: none;
+    opacity: 0.95;
+    margin-top: 22px;
+    margin-left: 0px;
+}
+
+.add-player img{
+    width: 25px;
+    height: 25px;
+    margin: 0px 5px 0px 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+button p{
+    font-family: "Helvetica",Sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 0px 0px 0px
+}
+
+.add-player:hover{
+}
+
+.header-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.filters{
+    display: flex;
+    font-display: row;
+    margin-left: 950px;
+}
+
+.country img, .filter-icon img{
+    width: 25px;
+    height: 25px;
+}
+
+.country{
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 12px;
+    border-style: none;
+    cursor: pointer;
+    background-color: rgb(134, 25, 17);
+    border-radius: 3px;
+}
+
+.filter-icon{
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 13px;
+    border-style: none;
+    cursor: pointer;
+    background-color: rgb(9, 64, 100);
+    border-radius: 3px;
+}
+
+#position-player-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.players-by-position{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-players{
+    display: flex;
+    flex-wrap: wrap;
+    width: 890px;
+}
+
+.player{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+
+.buttons-player{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-player button{
+    background-color: rgb(134, 25, 17);
+    margin: 5px;
+    border-style: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.position-panel{
+    width: 360px;
+    border-radius: 50px 0px 0px 50px;
+    margin-right: 30px;
+    margin-left: 50px;
+    background-image: -webkit-linear-gradient(rgb(134, 25, 17),rgb(9, 64, 100));
+}
+
+.position-panel p{
+    margin-top: 30px;
+    color: white;
+    font-family: "Copperplate",fantasy;
+    font-size: 50px;
+    text-align: center;
+}
+
+.data-player img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+
+.number-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 228px;
+    border-radius: 0px 0px 15px 15px;
+    background-color: rgb(134, 25, 17, 80%);
+}
+
+.position{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    background-color: rgb(134, 25, 17, 80%);
+}
+
+.number{
+    font-size: 30px;
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+    padding-right: 5px;
+    color: rgb(9, 64, 100);
+}
+
+.name{
+    font-size: 25px;
+    font-family: "Helvetica",Sans-serif;
+    padding-top: 4px;
+}
+
+.data{
+    opacity: 0;
+    transform: translate(0%, -300px);
+    transition: .5s ease;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 300px;
+}
+
+
+
+.data:hover{
+    opacity: 1;
+}
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________FOOTER___________________________________________________
+________________________________________________________________________________________________________________________*/
+
+
+
+footer {
+    background-color: rgb(223, 26, 35);
+    text-align: center;
+    background-image: -webkit-linear-gradient(rgb(223, 26, 35),rgb(9, 64, 100));
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+.title-footer p{
+    padding-top: 50px;
+    font-family: "Copperplate",fantasy;
+    font-size: 30px;
+}
+
+.other-links{
+    display: flex;
+    flex-direction: row;
+}
+
+.other-links div{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    text-align: left;
+    font-size: 11px;
+    font-weight:lighter;
+    padding-bottom: 4px;
+}
+
+.other-links .title-other-link{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-bottom: 5px;
+}
+
+.logo-footer{
+    padding-bottom: 50px;
+}
+
+.autor-rights{
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+
+.social-networks{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+
+.social-networks img{
+    padding: 20px;
+}
+

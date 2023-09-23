@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "cd9cc2ff-a70d-4e7f-9bdb-73067e78d30a",
+		"name": "Wilsterman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GAMES",
+			"item": [
+				{
+					"name": "POST GAME",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "LocalTeam",
+									"value": "Jorge Wilsterman",
+									"type": "text"
+								},
+								{
+									"key": "AwayTeam",
+									"value": "FC Barcelona",
+									"type": "text"
+								},
+								{
+									"key": "Stadium",
+									"value": "Stadium Evo Morales de Sacaba",
+									"type": "text"
+								},
+								{
+									"key": "OtherSituation",
+									"value": "Pendiente",
+									"type": "text"
+								},
+								{
+									"key": "Tournament",
+									"value": "Amistoso",
+									"type": "text"
+								},
+								{
+									"key": "StageTournament",
+									"value": "Amistoso",
+									"type": "text"
+								},
+								{
+									"key": "MatchdayTournament",
+									"value": " ",
+									"type": "text"
+								},
+								{
+									"key": "SeasonTournament",
+									"value": "Temporada 2022",
+									"type": "text"
+								},
+								{
+									"key": "LocalTeamImage",
+									"type": "file",
+									"src": "/C:/Users/Rene/Desktop/SEMESTRE 5/TECNOLOGÍAS WEB/Wilsterman/Web/Images/Teams/Mods/Wilsterman.gif"
+								},
+								{
+									"key": "AwayTeamImage",
+									"type": "file",
+									"src": "/C:/Users/Rene/Desktop/SEMESTRE 5/TECNOLOGÍAS WEB/Wilsterman/Web/Images/Teams/Barcelona.png"
+								},
+								{
+									"key": "Day",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "DayWeek",
+									"value": "Martes",
+									"type": "text"
+								},
+								{
+									"key": "Month",
+									"value": "Julio",
+									"type": "text"
+								},
+								{
+									"key": "Hour",
+									"value": "18",
+									"type": "text"
+								},
+								{
+									"key": "Minutes",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "LocalGoals",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "AwayGoals",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/game",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL GAMES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/game",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/game/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE GAME",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/game/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE GAME",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stageTournament\": \"Playoffs\",\r\n    \"matchdayTournament\": \"Vuelta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/game/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PLAYERS",
+			"item": [
+				{
+					"name": "POST PLAYER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "Cristian Machado",
+									"type": "text"
+								},
+								{
+									"key": "Position",
+									"value": "Contensión",
+									"type": "text"
+								},
+								{
+									"key": "Age",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "CurrentTeam",
+									"value": "Always Ready",
+									"type": "text"
+								},
+								{
+									"key": "Country",
+									"value": "Bolivia",
+									"type": "text"
+								},
+								{
+									"key": "Shirt",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "GeneralPosition",
+									"value": "Mediocampo",
+									"type": "text"
+								},
+								{
+									"key": "PlayerImage",
+									"type": "file",
+									"src": "/C:/Users/Rene/Desktop/SEMESTRE 5/TECNOLOGÍAS WEB/Wilsterman/Web/Images/Players/Cristian Machado.jpg"
+								},
+								{
+									"key": "CurrentTeamImage",
+									"type": "file",
+									"src": "/C:/Users/Rene/Desktop/SEMESTRE 5/TECNOLOGÍAS WEB/Wilsterman/Web/Images/Teams/Always Ready.png"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET WILSTERMAN PLAYERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PLAYER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/player/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PLAYER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/player/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PLAYER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"generealPosition\": \"Mediocampista\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/player/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RUMORS",
+			"item": [
+				{
+					"name": "GET ALL RUMORS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/rumor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST RUMOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Type",
+									"value": "Libre",
+									"type": "text"
+								},
+								{
+									"key": "TargetTeam",
+									"value": "Royal Pari",
+									"type": "text"
+								},
+								{
+									"key": "Transfer",
+									"value": "Salida",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "TransferVariables",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "Currency",
+									"value": "Bs.",
+									"type": "text"
+								},
+								{
+									"key": "PlayerId",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "TargetTeamImage",
+									"type": "file",
+									"src": "/C:/Users/Rene/Desktop/SEMESTRE 5/TECNOLOGÍAS WEB/Wilsterman/Web/Images/Teams/Royal Pari.png"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/rumor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET RUMOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/rumor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE RUMOR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/rumor/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE RUMOR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"transfer\": \"Salida\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/rumor/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BUSINESS LOGIC",
+			"item": [
+				{
+					"name": "CONFIRMAR RUMOR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/rumor?rumorId=8&confirmRumor=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"rumor"
+							],
+							"query": [
+								{
+									"key": "rumorId",
+									"value": "8"
+								},
+								{
+									"key": "confirmRumor",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTROS JUGADORES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/player?posiblePlayers=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"player"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "Bolivia",
+									"disabled": true
+								},
+								{
+									"key": "posiblePlayers",
+									"value": "true"
+								},
+								{
+									"key": "generalPosition",
+									"value": "Ataque",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PARTIDO JUGADO",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/game?gameId=12&localGoals=2&awayGoals=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game"
+							],
+							"query": [
+								{
+									"key": "gameId",
+									"value": "12"
+								},
+								{
+									"key": "localGoals",
+									"value": "2"
+								},
+								{
+									"key": "awayGoals",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTRO TORNEO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/game?tournament=Liga",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"game"
+							],
+							"query": [
+								{
+									"key": "tournament",
+									"value": "Liga"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

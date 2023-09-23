@@ -1,0 +1,391 @@
+* {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    font-family: "Woodford Bourne Regular", sans-serif;
+}
+
+/*---------------------------Navigator / Menu------------------------------*/
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: rgb(207, 40, 29);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:80px;
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(134, 25, 17));
+    opacity: 1;
+}
+
+.wilsterman-logo{
+    padding: 10px 20px 0px 20px;
+}
+
+.label-team{
+    padding: 20px 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.sponsor-menu{
+    padding: 16px 20px 10px 10px;
+}
+
+li {
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type: none;
+    float:right;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin: 30px 25px 0px 25px;
+}
+
+li a:hover {
+    opacity: 1;
+    border-bottom-style: solid;
+    border: 2px;
+    border-color: white;
+}
+
+.menu-space{
+    width: 120px;
+}
+
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________GAMES____________________________________________________
+________________________________________________________________________________________________________________________*/
+
+#border-games{
+    background-color: rgb(223, 26, 35);
+}
+
+.title-games{
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+.title-principal{
+    font-family: "Copperplate",fantasy;
+}
+
+#border-gray{
+    background-color: rgb(247, 240, 240);
+    margin: 80px 50px 0px 50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+#edit-box{
+    width: 900px;
+    height: 480px;
+    border-radius: 30px;
+    background-color: white;
+    margin-bottom: 40px;
+}
+
+#form-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.date{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(134, 25, 17);
+    padding-left: 10px;
+    color: white;
+    border-radius: 29px 29px 0px 0px;
+}
+
+.date-day{
+    margin-right: 20px;
+}
+
+.date label{
+    font-family: "Copperplate",fantasy;
+    color: white;
+    opacity: 0.6;
+}
+
+#day{
+    width: 80px;
+    text-align: center;
+    padding: 0px;
+    font-size: 50px;
+    background-color: rgb(134, 25, 17);
+    font-family: "Copperplate",fantasy;
+    color: white;
+    border-style: none;
+}
+
+#day option{
+    font-size: 30px;
+}
+
+.date-day-month{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-day-month select{
+    width: 150px;
+    background-color: rgb(134, 25, 17);
+    color: white;
+    border-style: none;
+    font-size: 20px;
+    font-family: "Copperplate",fantasy;
+}
+
+.date-day-month label{
+    width: 40px;
+    font-size: 14px;
+    color: white;
+    border-style: none;
+}
+
+
+.tournament-data{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    padding-left: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+    border-bottom-style: solid;
+    border-color: rgb(186, 189, 192);
+}
+
+.matchday, .stage, .tournament{
+    width: 400px;
+}
+
+.tournament-data label{
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+    color: rgb(83, 84, 85);
+}
+
+.tournament-data select, .tournament-data input{
+    width: 200px;
+    background-color:white;
+    color: rgb(0, 0, 0);
+    border-style: none;
+    font-size: 22px;
+    font-family: "Helvetica",Sans-serif;
+    text-align: center;
+}
+
+.tournament-data input{
+    border-style: none;
+    border-bottom-style: solid;
+    border-color:rgb(83, 84, 85);
+}
+
+    
+
+.teams{
+    display: flex;
+    flex-direction: row;
+    margin:20px 100px 20px 80px;
+    align-items: center;
+}
+
+.local-team, .away-team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+#local, #visitante{
+    margin-top: 5px;
+    width: 300px;
+    border-style: none;
+    border-bottom-style: solid;
+    border-color:rgb(117, 119, 121);
+    font-size: 22px;
+    font-family: "Helvetica",Sans-serif;
+    text-align: center;
+}
+
+.standar-image{
+    margin-bottom: 20px;
+}
+
+
+.stadium{
+    display: flex;
+    flex-direction: row;
+    border-style: none;
+    border-top-style: solid;
+    border-color:rgb(83, 84, 85);
+    align-items: center;
+}
+
+.stadium-image{
+    padding-right: 20px;
+    padding-left: 220px;
+}
+
+.stadium input{
+    margin-top: 5px;
+    width: 300px;
+    border-style: none;
+    border: 1px;
+    border-bottom-style: solid;
+    border-color:rgb(141, 143, 145);
+    font-size: 15px;
+    font-family: "Helvetica",Sans-serif;
+    text-align: center;
+    color: rgb(186, 189, 192);
+}
+
+#submit{
+    width: 250px;
+    height: 40px;
+    margin: 30px;
+    align-items: center;
+    margin-left: 330px;
+    background-color: rgb(134, 25, 17);
+    color: white;
+    font-family: "Copperplate",fantasy;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    border-radius: 8px;
+}
+
+
+
+.hour-minutes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    background-color: rgb(134, 25, 17);
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+
+.hour, .minutes, .two-points{
+    font-size: 35px;
+    text-align: center;
+}
+
+.two-points{
+    width: 20px;
+    text-align: center;
+}
+
+
+#hour , #minutes , .two-points p, #localGoals, #awayGoals{
+    font-family: "Copperplate",fantasy;
+    font-size: 35px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border-style: none;
+}
+
+#hour option, #minutes option, #localGoals, #awayGoals{
+    background-color: rgb(134, 25, 17);
+    color: white;
+}
+
+#localGoals, #awayGoals{
+    background-color: transparent;
+    width: 60;
+    border: 1px;
+    border-bottom-style: solid;
+    border-color:rgb(141, 143, 145);
+}
+
+
+/*______________________________________________________________________________________________________________________
+_______________________________________________________________FOOTER___________________________________________________
+________________________________________________________________________________________________________________________*/
+
+
+
+footer {
+    background-color: rgb(223, 26, 35);
+    text-align: center;
+    background-image: -webkit-linear-gradient(rgb(223, 26, 35),rgb(9, 64, 100));
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+.title-footer p{
+    padding-top: 50px;
+    font-family: "Copperplate",fantasy;
+    font-size: 30px;
+}
+
+.other-links{
+    display: flex;
+    flex-direction: row;
+}
+
+.other-links div{
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    text-align: left;
+    font-size: 11px;
+    font-weight:lighter;
+    padding-bottom: 4px;
+}
+
+.other-links .title-other-link{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-bottom: 5px;
+}
+
+.logo-footer{
+    padding-bottom: 50px;
+}
+
+.autor-rights{
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+
+.social-networks{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+
+.social-networks img{
+    padding: 20px;
+}
+
