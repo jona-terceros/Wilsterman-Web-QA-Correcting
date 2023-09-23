@@ -4,6 +4,10 @@ window.addEventListener('DOMContentLoaded', function(event){
     var queryParams = window.location.search.split('&');
     var type = queryParams[0].split('=')[1];
     let gameId = queryParams[1].split('=')[1];
+    const daysSelect = document.getElementById("day");
+    const dayWeekSelect = document.getElementById("day-week");
+    const monthSelect = document.getElementById("month");
+    const tournamentSelect = document.getElementById("tournament");
 
     if(type == "edit"){
         GetResultNormal();
@@ -75,7 +79,17 @@ window.addEventListener('DOMContentLoaded', function(event){
         document.getElementById('awayImage').innerHTML=awayImage;
     }
 
-
+    function generateOptions(select, optionsArray) {
+        for (const optionText of optionsArray) {
+            const option = document.createElement("option");
+            option.text = optionText;
+            select.appendChild(option);
+        }
+    }
+    generateOptions(daysSelect, ["01", "02", "03", /* ... */]);
+    generateOptions(dayWeekSelect, ["Lunes", "Martes", "Miércoles", /* ... */]);
+    generateOptions(monthSelect, ["Enero", "Febrero", "Marzo", /* ... */]);
+    generateOptions(tournamentSelect, ["Liga Boliviana", "Copa Sudamericana", "Amistoso"]);
 
     async function GetGameToPlay(event){
 
