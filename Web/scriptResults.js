@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
     const baseUrl = `${baseRawUrl}/api`;
 
