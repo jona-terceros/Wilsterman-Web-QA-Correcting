@@ -45,9 +45,9 @@ window.addEventListener('DOMContentLoaded', function(event){
                     }
                 }
 
-                var gamesByMonth = "";
-                var fullContent = "";
-                var counter =0;
+                let gamesByMonth = "";
+                let fullContent = "";
+                let counter =0;
                 var tournamentImage;
 
                 for(i = 0; i < listMonths.length; i++){
