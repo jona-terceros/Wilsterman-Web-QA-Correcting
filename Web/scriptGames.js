@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
         const url = `http://localhost:5500/api/game?finish=Pendiente&tournament=${filterTournament}`;
         let response = await fetch(url);
+        let errorText;
         try{
             if(response.status == 200){
                 let data = await response.json();
@@ -50,6 +51,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let gamesByMonth = "";
                 let fullContent = "";
                 let counter = 0;
+           
                 for(i = 0; i < listMonths.length; i++){
 
                     while(counter < monthText.length && listMonths[i] == monthText[counter]){
@@ -128,11 +130,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
 
             } else {
-                let errorText = await response.text();
+                errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            let errorText = await error.text();
+            errorText = await error.text();
             alert(errorText);
         }
     }
