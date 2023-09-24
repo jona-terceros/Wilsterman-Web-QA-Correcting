@@ -48,7 +48,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let gamesByMonth = "";
                 let fullContent = "";
                 let counter =0;
-                var tournamentImage;
 
                 for(i = 0; i < listMonths.length; i++){
 
