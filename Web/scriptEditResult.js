@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log(event.currentTarget);
         event.preventDefault();
 
-        var month = "";
+        let month = "";
 
         switch(event.currentTarget.month.value){
             case "Enero":month="01";break;
