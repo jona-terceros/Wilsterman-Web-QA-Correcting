@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function DeleteGame(event){
         
-        var r = confirm("Are you sure you want to delete it?");
+        let r = confirm("Are you sure you want to delete it?");
         if (r == true) {
             let gameId = this.dataset.deleteGameId;
             let url = `http://localhost:5500/api/game/${gameId}`;
