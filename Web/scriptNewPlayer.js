@@ -1,8 +1,12 @@
+import generateFooter from "./Components/footerComponent.js";
+
 window.addEventListener('DOMContentLoaded', function(event){
 
 
     var queryParams = window.location.search.split('?');
     let playerId;
+    document.getElementById("footer").innerHTML = generateFooter();
+
     if(queryParams.length == 1){
         document.getElementById('form-box').addEventListener('submit', CreatePlayer);
     }
@@ -139,7 +143,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 console.log(data);
         });
     }
-
 
 
 });
