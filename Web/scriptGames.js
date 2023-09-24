@@ -170,27 +170,27 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function convertTextMonth(month){
         switch(month){
-            case '01':return 'Enero';break;
-            case '02':return 'Febrero';break;
-            case '03':return 'Marzo';break;
-            case '04':return 'Abril';break;
-            case '05':return 'Mayo';break;
-            case '06':return 'Junio';break;
-            case '07':return 'Julio';break;
-            case '08':return 'Agosto';break;
-            case '09':return 'Septiembre';break;
-            case '10':return 'Octubre';break;
-            case '11':return 'Noviembre';break;
-            case '12':return 'Diciembre';break;
+            case '01':return 'Enero';
+            case '02':return 'Febrero';
+            case '03':return 'Marzo';
+            case '04':return 'Abril';
+            case '05':return 'Mayo';
+            case '06':return 'Junio';
+            case '07':return 'Julio';
+            case '08':return 'Agosto';
+            case '09':return 'Septiembre';
+            case '10':return 'Octubre';
+            case '11':return 'Noviembre';
+            case '12':return 'Diciembre';
         }
     }
 
     function tournamentPathImage(tournament){
         switch(tournament){
-            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";break}
-            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";break}
-            case "Amistoso":{return "./Images/Tournaments/amistoso.png";break}
-            default:{return "./Images/Tournaments/Liga Boliviana.png";break}
+            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";}
+            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";}
+            case "Amistoso":{return "./Images/Tournaments/amistoso.png";}
+            default:{return "./Images/Tournaments/Liga Boliviana.png";}
         }
     }
 
