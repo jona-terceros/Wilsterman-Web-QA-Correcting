@@ -134,8 +134,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault();
 
         
-        localGoals=event.currentTarget.localGoals.value;
-        awayGoals=event.currentTarget.awayGoals.value;
+        let localGoals=event.currentTarget.localGoals.value;
+        let awayGoals=event.currentTarget.awayGoals.value;
 
         
         let url = `http://localhost:5500/api/game?gameId=${gameId}&localGoals=${localGoals}&awayGoals=${awayGoals}`;
