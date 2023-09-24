@@ -20,23 +20,23 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
-                var dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
-                var month = data.map(g => `<div class="date-month"><p>${g.month}</p></div>`);
-                var monthText = data.map(g => g.month);
-                var localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
-                var awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
-                var stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
-                var matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
-                var localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
-                var goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
-                var awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
-                var stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
-                var timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
-                var tournament = data.map(g => g.tournament);
-                var gameId = data.map(g => g.id);
+                const day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
+                const dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
+                const month = data.map(g => `<div class="date-month"><p>${g.month}</p></div>`);
+                const monthText = data.map(g => g.month);
+                const localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
+                const awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
+                const stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
+                const matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
+                const localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
+                const goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
+                const awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
+                const stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
+                const timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
+                const tournament = data.map(g => g.tournament);
+                const gameId = data.map(g => g.id);
 
-                var listMonths = [];
+                const listMonths = [];
                 let newMonth = "";
                 for(var i = 0; i < month.length; i++){
                     if(newMonth != monthText[i]){
