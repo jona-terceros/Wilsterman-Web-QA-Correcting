@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
                     while(counter < monthText.length && listMonths[i] == monthText[counter]){
 
-                        var contentGame=`<div class="game-buttons" title~="${i}">
+                        let contentGame=`<div class="game-buttons" title~="${i}">
                                             <div class="game">
                                                 <div class="game-header">
                                                 ${day[counter]}
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                         gamesByMonth = gamesByMonth+contentGame;
                         counter=counter+1;
                     }
-                    var contentMonth = `<div class="month-game">
+                    let contentMonth = `<div class="month-game">
                                             <div class="month-bigger"><p>${convertTextMonth(listMonths[i])}</p></div>
                                             <div class="list-games">
                                                 ${gamesByMonth}
