@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             rem.remove();
         }
 
-        var filterTournament = "";
+        let filterTournament = "";
         if(this.dataset != undefined){
             filterTournament = this.dataset.buttonFilter;
         }
