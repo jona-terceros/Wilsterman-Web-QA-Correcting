@@ -1,10 +1,10 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
     const baseRawUrl = 'http://localhost:5500';
-    
+
     async function GetGames(event){
 
-        var remGamesHtml = document.querySelectorAll('.month-game');
+        const remGamesHtml = document.querySelectorAll('.month-game');
         for (const rem of remGamesHtml) {
             rem.remove();
         }
