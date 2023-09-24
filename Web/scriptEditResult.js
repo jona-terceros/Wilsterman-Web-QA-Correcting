@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             case "Diciembre":month="12";break;
         }
 
-        var gameToUpdate = {
+        const gameToUpdate = {
             localTeam:      event.currentTarget.local.value,
             awayTeam:       event.currentTarget.visitante.value,
             stadium:        event.currentTarget.stadium.value,
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             awayGoals:      parseInt(event.currentTarget.awayGoals.value),
         }
 
-        var gameJson = JSON.stringify(gameToUpdate);
+        const gameJson = JSON.stringify(gameToUpdate);
         let url = `http://localhost:5500/api/game/${gameId}`;
         
         fetch(url, {
