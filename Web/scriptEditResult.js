@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
 
-    var queryParams = window.location.search.split('&');
-    var type = queryParams[0].split('=')[1];
+    let  queryParams = window.location.search.split('&');
+    let type = queryParams[0].split('=')[1];
     let gameId = queryParams[1].split('=')[1];
  
 
