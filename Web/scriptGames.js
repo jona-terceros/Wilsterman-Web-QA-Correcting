@@ -1,10 +1,7 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-
-
+    
     async function GetGames(event){
 
         var remGamesHtml = document.querySelectorAll('.month-game');
