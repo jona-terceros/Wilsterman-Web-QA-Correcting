@@ -270,17 +270,17 @@ ________________________________________________________________________________
     margin-bottom: 6px;
 }
 
-.result-hour{
+.result-hour {
     display: flex;
-    align-items: stretch;
+    align-items: center; /* Alinea verticalmente en el centro */
     width: 90px;
     height: 45px;
-    align-items: center;
     background-color: rgb(134, 25, 17);
-    background-image: linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
+    background-image: linear-gradient(rgb(207, 40, 29), rgb(9, 64, 100));
     color: white;
     border-radius: 15px;
 }
+
 
 .local-goals, .away-goals, .versus, .hour, .minute, .two-points{
     font-size: 35px;
