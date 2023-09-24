@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             rem.remove();
         }
 
-        var filterTournament = "";
+        let filterTournament = "";
         if(this.dataset != undefined){
             filterTournament = this.dataset.buttonFilter;
         }
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 var gameId = data.map(g => g.id);
 
                 var listMonths = [];
-                var newMonth = "";
+                let newMonth = "";
                 for(var i = 0; i < month.length; i++){
                     if(newMonth != monthText[i]){
                         newMonth = monthText[i];
