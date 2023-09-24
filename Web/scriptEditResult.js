@@ -19,9 +19,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
         
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-
 
     async function GetResultNormal(event){
 
