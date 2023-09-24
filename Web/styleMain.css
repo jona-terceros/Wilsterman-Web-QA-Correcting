@@ -53,7 +53,7 @@ li a {
 li a:hover {
     opacity: 1;
     border-bottom-style: solid;
-    border: 2px;
+    border-bottom-width: 2px; /* Establece el ancho del borde a 2px */
     border-color: white;
 }
 
@@ -188,7 +188,9 @@ ________________________________________________________________________________
     border-radius: 8%;
 }
 
-.result-header{
+.result-header {
+    display: flex;
+    flex-direction: row;
     background-color: rgb(134, 25, 17);
     width: 400px;
     height: 45px;
@@ -225,11 +227,6 @@ ________________________________________________________________________________
 
 .stage {
     width: 240px;
-}
-
-.result-header{
-    display: flex;
-    flex-direction: row;
 }
 
 .date-day-month{
