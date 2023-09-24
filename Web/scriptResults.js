@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     async function GetResult(event){
 
-        var remGamesHtml = document.querySelectorAll('.month-game');
+        const remGamesHtml = document.querySelectorAll('.month-game');
         for (const rem of remGamesHtml) {
             rem.remove();
         }
