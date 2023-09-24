@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const url = `http://localhost:5500/api/game/${gameId}`;
         let response = await fetch(url);
 
-        var data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let data = await response.json();
+        let editForm = document.getElementById('form-box');
 
-        var month = data.month;
+        let month = data.month;
         switch(month){
             case '01':month= "Enero";break;
             case '02':month= "Febrero";break;
@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         editForm.awayGoals.value = data.awayGoals;//goles visita
 
 
-        var localPath =  `${baseRawUrl}/${data.localTeamPath}`;
-        var awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
+        let localPath =  `${baseRawUrl}/${data.localTeamPath}`;
+        let awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
 
-        var localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
-        var awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
-        var title = `<p class="title-principal">Editar Partido</p>`;
+        let localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
+        let awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
+        let title = `<p class="title-principal">Editar Partido</p>`;
 
         document.getElementById('title-changer').innerHTML=title;
         document.getElementById('localImage').innerHTML=localImage;
@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     async function GetGameToPlay(event){
 
         const url = `http://localhost:5500/api/game/${gameId}`;
-        var response = await fetch(url);
+        let response = await fetch(url);
 
-        var data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let data = await response.json();
+        let editForm = document.getElementById('form-box');
 
-        var month = data.month;
+        let month = data.month;
         switch(month){
             case '01':month= "Enero";break;
             case '02':month= "Febrero";break;
@@ -107,19 +107,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
         editForm.localGoals.value = data.localGoals;//goles local
         editForm.awayGoals.value = data.awayGoals;//goles visita
 
-        for(var i=0; i< 14; i++){
+        for(let i=0; i< 14; i++){
             editForm[i].disabled = true;
         }
         editForm[8].disabled = false;
         editForm[9].disabled = false;
         editForm[13].disabled = false;
 
-        var localPath =  `${baseRawUrl}/${data.localTeamPath}`;
-        var awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
+        let localPath =  `${baseRawUrl}/${data.localTeamPath}`;
+        let awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
 
-        var localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
-        var awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
-        var title = `<p class="title-principal">Simular Partido</p>`;
+        let localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
+        let awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
+        let title = `<p class="title-principal">Simular Partido</p>`;
 
         document.getElementById('title-changer').innerHTML=title;
         document.getElementById('localImage').innerHTML=localImage;
