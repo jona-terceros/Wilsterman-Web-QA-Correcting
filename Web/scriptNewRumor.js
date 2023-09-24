@@ -1,6 +1,8 @@
+import generateMenu from "./Components/menuComponent.js";
+
 window.addEventListener('DOMContentLoaded', function(event){
 
-
+    document.getElementById("menu").innerHTML = generateMenu();
     var queryParams = window.location.search.split('&');
     var type = queryParams[0].split('=')[1];
     let playerId = queryParams[1].split('=')[1];
