@@ -37,7 +37,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 
                 const listMonths = [];
                 let newMonth = "";
-                for(var i = 0; i < month.length; i++){
+                let i;
+                for(i = 0; i < month.length; i++){
                     if(newMonth != monthText[i]){
                         newMonth = monthText[i];
                         listMonths.push(newMonth);
@@ -49,7 +50,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 var counter =0;
                 var tournamentImage;
 
-                for(var i = 0; i < listMonths.length; i++){
+                for(i = 0; i < listMonths.length; i++){
 
                     while(counter < monthText.length && listMonths[i] == monthText[counter]){
 
