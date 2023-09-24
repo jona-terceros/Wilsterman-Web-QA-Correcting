@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 const gameId = data.map(g => g.id);
 
                 const listMonths = [];
-                var newMonth = "";
+                let newMonth = "";
                 for(var i = 0; i < localTeam.length; i++){
                     if(newMonth != monthText[i]){
                         newMonth = monthText[i];
@@ -46,9 +46,9 @@ window.addEventListener('DOMContentLoaded', function(event){
                     }
                 }
 
-                var gamesByMonth = "";
-                var fullContent = "";
-                var counter = 0;
+                let gamesByMonth = "";
+                let fullContent = "";
+                let counter = 0;
                 var tournamentImage;
 
                 for(var i = 0; i < listMonths.length; i++){
