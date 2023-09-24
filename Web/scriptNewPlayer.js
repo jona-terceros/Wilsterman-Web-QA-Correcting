@@ -1,10 +1,12 @@
 import generateFooter from "./Components/footerComponent.js";
+import generateMenu from "./Components/menuComponent.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
 
     var queryParams = window.location.search.split('?');
     let playerId;
+    document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
 
     if(queryParams.length == 1){
