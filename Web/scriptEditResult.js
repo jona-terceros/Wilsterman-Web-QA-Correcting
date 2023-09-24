@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function(event){
+document.addEventListener('DOMContentLoaded', (event) => {
 
 
     var queryParams = window.location.search.split('&');
