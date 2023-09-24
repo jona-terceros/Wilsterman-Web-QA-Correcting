@@ -16,6 +16,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
         const url = `http://localhost:5500/api/game?finish=Terminado&tournament=${filterTournament}`;
         let response = await fetch(url);
+        let errorText;
         try{
             if(response.status == 200){
                 let data = await response.json();
@@ -118,11 +119,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
                 
             } else {
-                var errorText = await response.text();
+                errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            errorText = await error.text();
             alert(errorText);
         }
 
