@@ -32,7 +32,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 const goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
                 const awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
                 const stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
-                const timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
                 const tournament = data.map(g => g.tournament);
                 const gameId = data.map(g => g.id);
 
