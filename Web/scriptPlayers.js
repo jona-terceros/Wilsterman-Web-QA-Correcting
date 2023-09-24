@@ -1,4 +1,5 @@
 import generateMenu from "./Components/menuComponent.js";
+import generateFooter from "./Components/footerComponent.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
@@ -7,6 +8,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     const baseUrl = `${baseRawUrl}/api`;
 
     document.getElementById("menu").innerHTML = generateMenu();
+    document.getElementById("footer").innerHTML = generateFooter();
 
     async function GetPlayers(event){
 
