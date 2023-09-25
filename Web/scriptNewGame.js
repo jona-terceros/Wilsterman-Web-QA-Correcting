@@ -13,8 +13,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         document.getElementById('form-box').addEventListener('submit', UpdateGame);
     }
         
-
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
     const baseUrl = `${baseRawUrl}/api`;
 
