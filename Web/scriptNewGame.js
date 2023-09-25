@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         let data = await response.json();
         let editForm = document.getElementById('form-box');
 
-        var month = data.month;
+        let month = data.month;
         switch(month){
             case '01':month= "Enero";break;
             case '02':month= "Febrero";break;
