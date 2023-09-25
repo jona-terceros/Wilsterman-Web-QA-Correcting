@@ -264,7 +264,6 @@ button p{
 
 .result-hour{
     display: flex;
-    align-items: stretch;
     width: 90px;
     height: 45px;
     align-items: center;
