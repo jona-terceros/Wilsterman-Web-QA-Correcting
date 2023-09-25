@@ -110,12 +110,12 @@ window.addEventListener('DOMContentLoaded', function(event){
         editForm.minutes.value = data.minutes;
 
 
-        var localPath =  `${baseRawUrl}/${data.localTeamPath}`;
-        var awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
+        let localPath =  `${baseRawUrl}/${data.localTeamPath}`;
+        let awayPath = `${baseRawUrl}/${data.awayTeamPath}`;
 
-        var localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
-        var awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
-        var title = `<p class="title-principal">Editar Partido</p>`;
+        let localImage = `<img src="${localPath}"  width="180px" height="180px"></img>`;
+        let awayImage = `<img src="${awayPath}"  width="180px" height="180px"></img>`;
+        let title = `<p class="title-principal">Editar Partido</p>`;
 
         document.getElementById('title-changer').innerHTML=title;
         document.getElementById('localImage').innerHTML=localImage;
@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         console.log(event.currentTarget);
         event.preventDefault();
 
-        var month = "";
+        let month = "";
 
         switch(event.currentTarget.month.value){
             case "Enero":month="01";break;
@@ -145,7 +145,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             case "Diciembre":month="12";break;
         }
 
-        var gameToUpdate = {
+        let gameToUpdate = {
             localTeam:      event.currentTarget.local.value,
             awayTeam:       event.currentTarget.visitante.value,
             stadium:        event.currentTarget.stadium.value,
@@ -159,7 +159,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             minutes:        event.currentTarget.minutes.value,
         }
 
-        var gameJson = JSON.stringify(gameToUpdate);
+        let gameJson = JSON.stringify(gameToUpdate);
         let url = `http://localhost:5500/api/game/${gameId}`;
         
         fetch(url, {
