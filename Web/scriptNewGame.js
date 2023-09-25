@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
 
-    var queryParams = window.location.search.split('?');
+    const queryParams = window.location.search.split('?');
     let gameId = "";
     if(queryParams.length == 1){
         document.getElementById('form-box').addEventListener('submit', CreateGame);
