@@ -25,15 +25,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     var namePlayer = "";
     var playerPath = "";
 
-        
-
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-    
-
-
 
     async function GetPlayer(event){
 
@@ -53,11 +45,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
 
-
-
     function CreateRumor(event){
-
-
         event.preventDefault();
         let url = `http://localhost:5500/api/rumor`;
         const formData = new FormData();
@@ -94,8 +82,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             }
         });
     }
-
-
 
     async function GetRumor(event){
 
@@ -157,10 +143,5 @@ window.addEventListener('DOMContentLoaded', function(event){
                 console.log(data);
         });
     }
-
-
-
-
-
 });
 
