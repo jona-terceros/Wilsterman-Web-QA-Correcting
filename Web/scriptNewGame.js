@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     async function GetOneGame(event){
 
         const url = `http://localhost:5500/api/game/${gameId}`;
-        var response = await fetch(url);
+        let response = await fetch(url);
 
         var data = await response.json();
         var editForm = document.getElementById('form-box');
