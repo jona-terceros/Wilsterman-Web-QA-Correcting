@@ -608,10 +608,15 @@ ________________________________________________________________________________
     padding-top: 260px;
 }
 
-.position-player{
-    width: 296;
+.position-player {
+    width: 296px; /* Agrega 'px' para píxeles */
     text-align: center;
+    font-size: 18px;
+    font-family: "Helvetica", sans-serif; /* Asegúrate de usar comillas y minúsculas en 'sans-serif' */
+    font-weight: bold;
+    padding-top: 5px;
 }
+
 
 .number-player{
     font-size: 30px;
@@ -637,15 +642,6 @@ ________________________________________________________________________________
     transform: translate(0%, -330px);
     transition: .5s ease;
 }
-
-.position-player{
-    font-size: 18px;
-    font-family: "Helvetica",Sans-serif;
-    font-weight: bold;
-    padding-top: 5px;
-}
-
-
 
 /*______________________________________________________________________________________________________________________
 _______________________________________________________________FOOTER___________________________________________________
