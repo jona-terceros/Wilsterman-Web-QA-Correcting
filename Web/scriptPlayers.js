@@ -112,8 +112,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function DeletePlayer(event){
         
-        let r = confirm("Are you sure you want to delete it?");
-        if (r == true) {
+        let result = confirm("Are you sure you want to delete it?");
+        if (result) {
             let playerId = this.dataset.deletePlayerId;
             let url = `http://localhost:5500/api/player/${playerId}`;
             fetch(url, { 
