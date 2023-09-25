@@ -117,10 +117,6 @@ button img{
     flex-direction: column;
 }
 
-.buttons button:hover{
-    
-}
-
 .add-player{
     height: 40px;
     width: 250px;
@@ -148,9 +144,6 @@ button p{
     font-size: 18px;
     text-align: center;
     margin: 10px 0px 0px 0px
-}
-
-.add-player:hover{
 }
 
 .header-page{
