@@ -1,13 +1,14 @@
 import generateMenu from "./Components/menuComponent.js";
 import generateFooter from "./Components/footerComponent.js";
+import fetchUpdate from "./Repository/fetchUpdate.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
     document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
     
-    var queryParams = window.location.search.split('&');
-    var type = queryParams[0].split('=')[1];
+    let queryParams = window.location.search.split('&');
+    let type = queryParams[0].split('=')[1];
     let playerId = queryParams[1].split('=')[1];
     let rumorId = playerId;
 
@@ -22,17 +23,17 @@ window.addEventListener('DOMContentLoaded', function(event){
         document.getElementById('form-box').addEventListener('submit', UpdateRumor);
     }
 
-    var namePlayer = "";
-    var playerPath = "";
+    let namePlayer = "";
+    let playerPath = "";
 
     const baseRawUrl = 'http://localhost:5500';
 
     async function GetPlayer(event){
 
         const url = `http://localhost:5500/api/player/${playerId}`;
-        var response = await fetch(url);
-        var data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let response = await fetch(url);
+        let data = await response.json();
+        let editForm = document.getElementById('form-box');
 
         namePlayer = data.name;
         playerPath=  `${baseRawUrl}/${data.playerPath}`;
@@ -40,7 +41,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         editForm[4].disabled = true;
         editForm[5].disabled = true;
 
-        var playerImage = `<img src="${playerPath}"  width="180px" height="180px"></img>`;
+        let playerImage = `<img src="${playerPath}"  width="180px" height="180px"></img>`;
         document.getElementById('playerImage').innerHTML=playerImage;
     }
 
@@ -85,14 +86,14 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     async function GetRumor(event){
 
-        var title = `<p class="title-principal">Editar Partido</p>`;
+        let title = `<p class="title-principal">Editar Partido</p>`;
 
         document.getElementById('title-changer').innerHTML=title;
 
         const url = `http://localhost:5500/api/rumor/${rumorId}`;
-        var response = await fetch(url);
-        var data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let response = await fetch(url);
+        let data = await response.json();
+        let editForm = document.getElementById('form-box');
 
         playerId = data.playerId;
         namePlayer = data.playerName;
@@ -112,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         console.log(event.currentTarget);
         event.preventDefault();
 
-        var rumorToUpdate = {
+        let rumorToUpdate = {
             price: parseInt(event.currentTarget.price.value),
             transferVariables: parseInt(event.currentTarget.variables.value),
             currency: event.currentTarget.divisa.value,
@@ -120,28 +121,12 @@ window.addEventListener('DOMContentLoaded', function(event){
             targetTeam: event.currentTarget.target.value, 
         }
 
-        var gameJson = JSON.stringify(rumorToUpdate);
+        let gameJson = JSON.stringify(rumorToUpdate);
         let url = `http://localhost:5500/api/rumor/${rumorId}`;
+        let alertMessage = "Transfer Rumor updated successfuly.";
+        let locationHTML = "rumors.html";
         
-        fetch(url, {
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: gameJson
-        }).then((response) => {
-            if (response.status === 200) {
-                alert("Transfer Rumor updated successfuly.");
-                window.location.href = "rumors.html";
-            } 
-            else{
-                response.text().then((data) => {
-                    debugger;
-                    console.log(data);
-                });
-            }
-        }).catch((response) => {
-                debugger;
-                console.log(data);
-        });
+        fetchUpdate(url,gameJson,alertMessage,locationHTML,data);
     }
 });
 
