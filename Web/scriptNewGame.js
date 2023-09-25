@@ -14,8 +14,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
         
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
 
     function CreateGame(event){
         
