@@ -226,6 +226,7 @@ button p{
     flex-direction: column;
     margin-left: 5px;
     color: white;
+    padding: 5px;
 }
 
 .date-day P{
@@ -235,10 +236,6 @@ button p{
     height: 35px;
     width: 35px;
     padding: 0px 10px 0px 10px;
-}
-
-.date-day-month{
-    padding: 5px;
 }
 
 .date-day-literal p{
