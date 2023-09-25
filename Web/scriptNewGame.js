@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         const url = `http://localhost:5500/api/game/${gameId}`;
         let response = await fetch(url);
 
-        var data = await response.json();
+        let data = await response.json();
         var editForm = document.getElementById('form-box');
 
         var month = data.month;
