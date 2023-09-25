@@ -3,7 +3,6 @@ import generateMenu from "./Components/menuComponent.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
-
     var queryParams = window.location.search.split('?');
     let playerId;
     document.getElementById("menu").innerHTML = generateMenu();
@@ -20,17 +19,9 @@ window.addEventListener('DOMContentLoaded', function(event){
         document.getElementById('form-box').addEventListener('submit', UpdatePlayer);
     }
 
-
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-    
-
 
     function CreatePlayer(event){
-
-        
         event.preventDefault();
         let url = `http://localhost:5500/api/player`;
         const formData = new FormData();
@@ -43,7 +34,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         formData.append('GeneralPosition', event.currentTarget.generalPosition.value);
         formData.append('PlayerImage', event.currentTarget.playerImage.files[0]);
         formData.append('CurrentTeamImage', event.currentTarget.teamImage.files[0]);
-
 
         fetch(url, {
             method: 'POST',
@@ -62,10 +52,7 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
 
-
     async function GetPlayer(event){
-
-        
 
         const url = `http://localhost:5500/api/player/${playerId}`;
         var response = await fetch(url);
@@ -107,7 +94,6 @@ window.addEventListener('DOMContentLoaded', function(event){
         editForm[2].disabled = true;
     }
 
-
     function UpdatePlayer(event){
         console.log(event.currentTarget);
         event.preventDefault();
@@ -145,7 +131,4 @@ window.addEventListener('DOMContentLoaded', function(event){
                 console.log(data);
         });
     }
-
-
 });
-
