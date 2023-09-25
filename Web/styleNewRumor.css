@@ -52,8 +52,8 @@ li a {
 
 li a:hover {
     opacity: 1;
-    border-bottom-style: solid;
     border: 2px;
+    border-bottom-style: solid;
     border-color: white;
 }
 
