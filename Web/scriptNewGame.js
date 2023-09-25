@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         event.preventDefault();
         let url = `http://localhost:5500/api/game`;
         const formData = new FormData();
-        var month = "";
+        const month = "";
 
         switch(event.currentTarget.month.value){
             case "Enero":month="01";break;
