@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var type = data.map(r => `<p class="type-transfer-literal">${r.type}</p>`);
+                let type = data.map(r => `<p class="type-transfer-literal">${r.type}</p>`);
                 var currency = data.map(r => `<div class="currency"><p>${r.currency}</p></div>`);
                 var price = data.map(r => `<div class="price"><p>${r.price}</p></div>`);
                 var playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
