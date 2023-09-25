@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         let response = await fetch(url);
 
         let data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let editForm = document.getElementById('form-box');
 
         var month = data.month;
         switch(month){
