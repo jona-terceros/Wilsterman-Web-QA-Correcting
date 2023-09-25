@@ -15,7 +15,6 @@ window.addEventListener('DOMContentLoaded', function(event){
     {
         playerId = queryParams[1].split('=')[1];
         GetPlayer();
-        
         document.getElementById('form-box').addEventListener('submit', UpdatePlayer);
     }
 
