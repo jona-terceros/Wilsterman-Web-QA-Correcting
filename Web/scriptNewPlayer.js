@@ -3,7 +3,7 @@ import generateMenu from "./Components/menuComponent.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
-    var queryParams = window.location.search.split('?');
+    let queryParams = window.location.search.split('?');
     let playerId;
     document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
@@ -54,15 +54,14 @@ window.addEventListener('DOMContentLoaded', function(event){
     async function GetPlayer(event){
 
         const url = `http://localhost:5500/api/player/${playerId}`;
-        var response = await fetch(url);
-        var data = await response.json();
-        var editForm = document.getElementById('form-box');
+        let response = await fetch(url);
+        let data = await response.json();
+        let editForm = document.getElementById('form-box');
+        let playerPath =  `${baseRawUrl}/${data.playerPath}`;
+        let teamPath = `${baseRawUrl}/${data.currentTeamPath}`;
+        let title = `<p class="title-principal">Editar Datos del Jugador</p>`;
 
-        var playerPath =  `${baseRawUrl}/${data.playerPath}`;
-        var teamPath = `${baseRawUrl}/${data.currentTeamPath}`;
-        var title = `<p class="title-principal">Editar Datos del Jugador</p>`;
-
-        var imagesContent = `<div id ="data-player" class="data-header">
+        let imagesContent = `<div id ="data-player" class="data-header">
                                 <img src="${playerPath}" alt="" class="standar-image">
                                 <div id="image-name-player">
                                     <input type="file" name="playerImage" id="playerImage">
@@ -97,7 +96,7 @@ window.addEventListener('DOMContentLoaded', function(event){
         console.log(event.currentTarget);
         event.preventDefault();
 
-        var playerToUpdate = {
+        let playerToUpdate = {
             name:           event.currentTarget.playerName.value,
             age:            parseInt(event.currentTarget.age.value),
             teamName:       event.currentTarget.teamName.value,
@@ -107,7 +106,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             currentTeam:    event.currentTarget.teamName.value,
         }
 
-        var playerJson = JSON.stringify(playerToUpdate);
+        let playerJson = JSON.stringify(playerToUpdate);
         let url = `http://localhost:5500/api/player/${playerId}`;
         
         fetch(url, {
