@@ -3,9 +3,7 @@ import generateFooter from "./Components/footerComponent.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
 
     document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
@@ -30,9 +28,7 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
                 var name = data.map(g => `<p class="name">${g.name}</p>`);
-                var country = data.map(g => g.country);
                 var shirt = data.map(g => `<p class="number">${g.shirt}</p>`);
                 var pos = data.map(g => `<p class="position">${g.generalPosition}</p>`);
                 var generalPosition = data.map(g => g.generalPosition);
