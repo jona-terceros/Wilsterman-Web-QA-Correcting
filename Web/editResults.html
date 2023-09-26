@@ -1,53 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wilsterman</title>
-    <script src="./scriptEditResult.js"></script>
+    <script type="module" src="./scriptEditResult.js"></script>
     <link rel="stylesheet" href="./styleNewGame.css">
 </head>
 <body>
 
     <!-----------------------------MENU------------------------------------------>
 
-    <div id= "menu">
-
-        <div class="wilsterman-logo">
-            <a href="./main.html" class="menu-logo">
-                <img src="./Images/Teams/Wilsterman.png" alt="Logo_Wilsterman" width="96px" height="60px">
-            </a>
-        </div>
-
-        <div class="label-team">
-            <p>Club Jorge Wilsterman</p>
-        </div>
-
-        <div class="menu-space">
-        </div>
-
-        <div class="menu-options">
-            <ul>
-                <li><a href="./players.html" target=>PLANTEL</a></li>
-                <li><a href="./rumors.html" target=>RUMORES</a></li>
-                <li><a href="#footer" target=>CLUB</a></li>
-            </ul>
-        </div>
-
-        <div class="sponsor-menu">
-            <a href="https://www.facebook.com/forteathletic/" class="sponsor-logo">
-                <img src="./Images/Sponsors/Mods/forte-azul.gif" alt="Logo_Forte" width="60px" height="48px">
-            </a>
-        </div>
-
-        <div class="sponsor-menu">
-            <a href="https://www.suzuki.com.bo/" class="sponsor-logo">
-                <img src="./Images/Sponsors/Mods/Suzuki-azul.gif" alt="Logo_Suzuki" width="60px" height="48px">
-            </a>
-        </div>
-
-    </div>     
-
+    <div id= "menu"></div>      
 
 
     <!--________________________________________________________________________________________________________________________-->
@@ -61,86 +26,34 @@
                 <p class="title-principal">Editar Resultado</p>
             </div>
             <div id="edit-box">
-                <form id ="form-box" action="">
+                <form id="form-box" action="">
                     <div class="date">
                         <div class="date-day">
                             <label for="day">Día: </label>
                             <select name="day" id="day">
-                                <option>01</option>
-                                <option>02</option>
-                                <option>03</option>
-                                <option>04</option>
-                                <option>05</option>
-                                <option>06</option>
-                                <option>07</option>
-                                <option>08</option>
-                                <option>09</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
-                                <option>21</option>
-                                <option>22</option>
-                                <option>23</option>
-                                <option>24</option>
-                                <option>25</option>
-                                <option>26</option>
-                                <option>27</option>
-                                <option>28</option>
-                                <option>29</option>
-                                <option>30</option>
-                                <option>31</option>
+                                
                             </select>
                         </div>
-
                         <div class="date-day-month">
                             <div class="date-day-literal">
                                 <label for="day-week">Día: </label>
                                 <select name="dayWeek" id="day-week">
-                                    <option>Lunes</option>
-                                    <option>Martes</option>
-                                    <option>Miércoles</option>
-                                    <option>Jueves</option>
-                                    <option>Viernes</option>
-                                    <option>Sábado</option>
-                                    <option>Domingo</option>
+                                  
                                 </select>
                             </div>
                             <div class="date-month">
                                 <label for="month">Mes: </label>
                                 <select name="month" id="month">
-                                    <option>Enero</option>
-                                    <option>Febrero</option>
-                                    <option>Marzo</option>
-                                    <option>Abril</option>
-                                    <option>Mayo</option>
-                                    <option>Junio</option>
-                                    <option>Julio</option>
-                                    <option>Agosto</option>
-                                    <option>Septiembre</option>
-                                    <option>Octubre</option>
-                                    <option>Noviembre</option>
-                                    <option>Diciembre</option>
+                                   
                                 </select>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="tournament-data">
                         <div class="tournament">
                             <label for="tournament">Torneo: </label>
                             <select name="tournament" id="tournament">
-                                <option>Liga Boliviana</option>
-                                <option>Copa Sudamericana</option>
-                                <option>Amistoso</option>
+                            
                             </select>
                         </div>
                         <div class="stage">
@@ -152,11 +65,10 @@
                             <input type="text" name="matchday" id="matchday">
                         </div>
                     </div>
-
                     <div class="teams">
                         <div class="local-team">
                             <div class="standar-image" id="localImage">
-                                <img src="./Images/Teams/estandar.png"  width="180px" height="180px"></img>
+                                <img src="./Images/Teams/estandar.png" alt="Team Estandar" width="180px" height="180px"></img>
                             </div>
                             <div class="team-image">
                                 <input type="file" name="imageLocal" id="fileLocal">
@@ -178,7 +90,7 @@
                         </div>
                         <div class="away-team">
                             <div class="standar-image" id="awayImage">
-                                <img src="./Images/Teams/estandar.png"  width="180px" height="180px"></img>
+                                <img src="./Images/Teams/estandar.png" alt="Team Estandar" width="180px" height="180px"></img>
                             </div>
                             <div class="team-image">
                                 <input type="file" name="imageVisita" id="fileAway">
@@ -209,61 +121,7 @@
     <!--________________________________________________________________________________________________________________________-->
 
 
-   <footer id="footer">
-
-        <div class="title-footer">
-            <p>ASOCIADOS</p>
-        </div>
-        <div class="other-links">
-            <div class="news-footer">
-                <p class="title-other-link">Noticias</p>
-                <p>Boletín de Noticias</p>
-                <p>Pasión Aviadora</p>
-            </div>
-            <div class="games-footer">
-                <p class="title-other-link">Partidos</p>
-                <p>Clasificación</p>
-                <p>Estadísticas del equipo</p>
-            </div>
-            <div class="teams-footer">
-                <p class="title-other-link">Equipos</p>
-                <p>Masculino</p>
-                <p>Reserva</p>
-                <p>Femenino</p>
-            </div>
-            <div class="online-store-footer">
-                <p class="title-other-link">Tienda Online</p>
-                <p>Equipaciones</p>
-                <p>Jugadores</p>
-                <p>Nuevo</p>
-                <p>Reservas</p>
-                <p>Wilsterman Retro</p>
-                <p>Colecciones</p>
-            </div>
-            <div class="club">
-                <p class="title-other-link">Club</p>
-                <p>Palmarés</p>
-                <p>Historia</p>
-                <p>UnicoTetra App</p>
-            </div>
-        </div>
-
-        <div class="logo-footer">
-            <img src="./Images/Teams/Mods/wilster-blanco.gif" width="400px" height="400px">
-        </div>
-
-        <div class="social-networks">
-            <img src="./Images/Social Network/facebook.gif" width="40px" height="40px">
-            <img src="./Images/Social Network/instagram.gif" width="40px" height="40px">
-            <img src="./Images/Social Network/snapchat.gif" width="40px" height="40px">
-            <img src="./Images/Social Network/twitter.gif" width="40px" height="40px">
-            <img src="./Images/Social Network/youtube.gif" width="40px" height="40px">
-        </div>
-
-        <div class="autor-rights">
-            <p>© Club Deportivo Wilsterman 2022</p>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 
 
     

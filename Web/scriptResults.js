@@ -1,64 +1,65 @@
+import generateFooter from "./Components/footerComponent.js";
+import generateMenu from "./Components/menuComponent.js";
+
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
+    document.getElementById("menu").innerHTML = generateMenu();
+    document.getElementById("footer").innerHTML = generateFooter();
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-
 
     async function GetResult(event){
 
-        var remGamesHtml = document.querySelectorAll('.month-game');
+        const remGamesHtml = document.querySelectorAll('.month-game');
         for (const rem of remGamesHtml) {
             rem.remove();
         }
 
-        var filterTournament = "";
+        let filterTournament = "";
         if(this.dataset != undefined){
             filterTournament = this.dataset.buttonFilter;
         }
 
         const url = `http://localhost:5500/api/game?finish=Terminado&tournament=${filterTournament}`;
         let response = await fetch(url);
+        let errorText;
         try{
             if(response.status == 200){
                 let data = await response.json();
 
-                var day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
-                var dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
-                var month = data.map(g => `<div class="date-month"><p>${g.month}</p></div>`);
-                var monthText = data.map(g => g.month);
-                var localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
-                var awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
-                var stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
-                var matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
-                var localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
-                var goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
-                var awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
-                var stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
-                var timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
-                var tournament = data.map(g => g.tournament);
-                var gameId = data.map(g => g.id);
+                const day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
+                const dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
+                const month = data.map(g => `<div class="date-month"><p>${g.month}</p></div>`);
+                const monthText = data.map(g => g.month);
+                const localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
+                const awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
+                const stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
+                const matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
+                const localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
+                const goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
+                const awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
+                const stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
+                const tournament = data.map(g => g.tournament);
+                const gameId = data.map(g => g.id);
 
-                var listMonths = [];
-                var newMonth = "";
-                for(var i = 0; i < month.length; i++){
+                const listMonths = [];
+                let newMonth = "";
+                let i;
+                for(i = 0; i < month.length; i++){
                     if(newMonth != monthText[i]){
                         newMonth = monthText[i];
                         listMonths.push(newMonth);
                     }
                 }
 
-                var gamesByMonth = "";
-                var fullContent = "";
-                var counter =0;
-                var tournamentImage;
+                let gamesByMonth = "";
+                let fullContent = "";
+                let counter =0;
 
-                for(var i = 0; i < listMonths.length; i++){
+                for(i = 0; i < listMonths.length; i++){
 
                     while(counter < monthText.length && listMonths[i] == monthText[counter]){
 
-                        var contentGame=`<div class="game-buttons" title~="${i}">
+                        let contentGame=`<div class="game-buttons" title~="${i}">
                                             <div class="game">
                                                 <div class="game-header">
                                                 ${day[counter]}
@@ -102,7 +103,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                         gamesByMonth = gamesByMonth+contentGame;
                         counter=counter+1;
                     }
-                    var contentMonth = `<div class="month-game">
+                    let contentMonth = `<div class="month-game">
                                             <div class="month-bigger"><p>${convertTextMonth(listMonths[i])}</p></div>
                                             <div class="list-games">
                                                 ${gamesByMonth}
@@ -123,11 +124,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
                 
             } else {
-                var errorText = await response.text();
+                errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            errorText = await error.text();
             alert(errorText);
         }
 
@@ -138,8 +139,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function DeleteGame(event){
         
-        var r = confirm("Are you sure you want to delete it?");
-        if (r == true) {
+        let r = confirm("Are you sure you want to delete it?");
+        if (r) {
             let gameId = this.dataset.deleteGameId;
             let url = `http://localhost:5500/api/game/${gameId}`;
             fetch(url, { 
@@ -163,27 +164,27 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function convertTextMonth(month){
         switch(month){
-            case '01':return 'Enero';break;
-            case '02':return 'Febrero';break;
-            case '03':return 'Marzo';break;
-            case '04':return 'Abril';break;
-            case '05':return 'Mayo';break;
-            case '06':return 'Junio';break;
-            case '07':return 'Julio';break;
-            case '08':return 'Agosto';break;
-            case '09':return 'Septiembre';break;
-            case '10':return 'Octubre';break;
-            case '11':return 'Noviembre';break;
-            case '12':return 'Diciembre';break;
+            case '01':return 'Enero';
+            case '02':return 'Febrero';
+            case '03':return 'Marzo';
+            case '04':return 'Abril';
+            case '05':return 'Mayo';
+            case '06':return 'Junio';
+            case '07':return 'Julio';
+            case '08':return 'Agosto';
+            case '09':return 'Septiembre';
+            case '10':return 'Octubre';
+            case '11':return 'Noviembre';
+            case '12':return 'Diciembre';
         }
     }
 
     function tournamentPathImage(tournament){
         switch(tournament){
-            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";break}
-            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";break}
-            case "Amistoso":{return "./Images/Tournaments/amistoso.png";break}
-            default:{return "./Images/Tournaments/Liga Boliviana.png";break}
+            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";}
+            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";}
+            case "Amistoso":{return "./Images/Tournaments/amistoso.png";}
+            default:{return "./Images/Tournaments/Liga Boliviana.png";}
         }
     }
 
