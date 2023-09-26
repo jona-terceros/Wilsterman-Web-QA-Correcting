@@ -1,11 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-
-
     async function GetResultAndNextGame(){
         const url = `http://localhost:5500/api/game?twoGamesOnly=true`;
         let response = await fetch(url);
@@ -13,26 +8,22 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
-                var dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
-                var month = data.map(g => `<div class="date-month"><p>${g.month}</p></div>`);
-                var localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
-                var awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
-                var stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
-                var matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
-                var localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
-                var goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
-                var awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
-                var stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
-                var timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
-                var tournament = data.map(g => g.tournament);
-                var gameId = data.map(g => g.id);
-                var monthText = data.map(g => g.month);
-                var tournamentImage;
-                var tournamentImage2;
+                let day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
+                let dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
+                let localImage = data.map(g => g.localTeamPath? `${baseRawUrl}/${g.localTeamPath}` : "");
+                let awayImage = data.map(g => g.awayTeamPath? `${baseRawUrl}/${g.awayTeamPath}` : "");
+                let stage = data.map(g => `<div class="stage"><p>${g.stageTournament}</p></div>`);
+                let matchday = data.map(g => `<div class="matchday"><p>${g.matchdayTournament}</p></div>`);
+                let localTeam = data.map(g => `<div class="team-name"><p>${g.localTeam}</p></div>`);
+                let goals = data.map(g => `<div class="local-goals"><p>${g.localGoals}</p></div><div class="versus"><p>-</p></div><div class="away-goals"><p>${g.awayGoals}</p></div>`);
+                let awayTeam = data.map(g => `<div class="team-name"><p>${g.awayTeam}</p></div>`);
+                let stadium = data.map(g => `<div class="stadium-name"><p>${g.stadium}</p></div>`);
+                let timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
+                let tournament = data.map(g => g.tournament);
+                let monthText = data.map(g => g.month);
 
 
-                var contentResult = `<div class="result-header">
+                let contentResult = `<div class="result-header">
                                         ${day[0]}
                                         <div class="date-day-month">
                                             ${dayWeek[0]}
@@ -63,7 +54,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                 if(day.length > 1)
                 {
 
-                    var contentGame =   `<div class="result-header">
+                    let contentGame =   `<div class="result-header">
                                             ${day[1]}
                                             <div class="date-day-month">
                                                 ${dayWeek[1]}
@@ -96,11 +87,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 
                 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
@@ -117,25 +108,23 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var type = data.map(r => `<p class="type-transfer-literal">${r.type}</p>`);
-                var currency = data.map(r => `<div class="currency"><p>${r.currency}</p></div>`);
-                var price = data.map(r => `<div class="price"><p>${r.price}</p></div>`);
-                var playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
-                var teamImage = data.map(g => g.targetTeamPath? `${baseRawUrl}/${g.targetTeamPath}` : "");
-                var targetTeam = data.map(r => `<div class="target-team-name"><p>${r.targetTeam}</p></div>`);
-                var playerName = data.map(r => `<div class="player-transfer-name"><p>${r.playerName}</p></div>`);
-                var transfer = data.map(r => r.transfer);
-                var rumorId = data.map(r => r.id);
+                let type = data.map(r => `<p class="type-transfer-literal">${r.type}</p>`);
+                let currency = data.map(r => `<div class="currency"><p>${r.currency}</p></div>`);
+                let price = data.map(r => `<div class="price"><p>${r.price}</p></div>`);
+                let playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
+                let teamImage = data.map(g => g.targetTeamPath? `${baseRawUrl}/${g.targetTeamPath}` : "");
+                let targetTeam = data.map(r => `<div class="target-team-name"><p>${r.targetTeam}</p></div>`);
+                let playerName = data.map(r => `<div class="player-transfer-name"><p>${r.playerName}</p></div>`);
+                let transfer = data.map(r => r.transfer);
+                let inOutImage;
+                let fullContent = "";
 
-                var inOutImage;
-                var fullContent = "";
-
-                for(var i = 0; i < 3; i++){
+                for(let i = 0; i < 3; i++){
                     switch(transfer[i]){
                         case "Salida":{inOutImage = "./Images/Otros/salida.gif";break}
                         case "Llegada":{inOutImage = "./Images/Otros/llegada.gif";break}
                     }
-                    var transfersContent=   `<div class="transfer">
+                    let transfersContent=   `<div class="transfer">
                                                 <div class="transfer-header">
                                                     ${price[i]}
                                                     ${currency[i]}
@@ -162,38 +151,39 @@ window.addEventListener('DOMContentLoaded', function(event){
                 document.querySelector('.more-rumors').insertAdjacentHTML("afterend", fullContent);
 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
 
-    function convertTextMonth(month){
-        switch(month){
-            case '01':return 'Enero';break;
-            case '02':return 'Febrero';break;
-            case '03':return 'Marzo';break;
-            case '04':return 'Abril';break;
-            case '05':return 'Mayo';break;
-            case '06':return 'Junio';break;
-            case '07':return 'Julio';break;
-            case '08':return 'Agosto';break;
-            case '09':return 'Septiembre';break;
-            case '10':return 'Octubre';break;
-            case '11':return 'Noviembre';break;
-            case '12':return 'Diciembre';break;
+    function convertTextMonth(month) {
+        switch (month) {
+            case '01': return 'Enero';
+            case '02': return 'Febrero';
+            case '03': return 'Marzo';
+            case '04': return 'Abril';
+            case '05': return 'Mayo';
+            case '06': return 'Junio';
+            case '07': return 'Julio';
+            case '08': return 'Agosto';
+            case '09': return 'Septiembre';
+            case '10': return 'Octubre';
+            case '11': return 'Noviembre';
+            case '12': return 'Diciembre';
+            default: return 'Mes no válido';
         }
     }
-
+    
     function tournamentPathImage(tournament){
         switch(tournament){
-            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";break}
-            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";break}
-            case "Amistoso":{return "./Images/Tournaments/amistoso.png";break}
-            default:{return "./Images/Tournaments/Liga Boliviana.png";break}
+            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";}
+            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";}
+            case "Amistoso":{return "./Images/Tournaments/amistoso.png";}
+            default:{return "./Images/Tournaments/Liga Boliviana.png";}
         }
     }
 
