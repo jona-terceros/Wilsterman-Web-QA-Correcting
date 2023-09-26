@@ -1,20 +1,22 @@
+import generateMenu from "./Components/menuComponent.js";
+import generateFooter from "./Components/footerComponent.js";
+
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
 
-
+    document.getElementById("menu").innerHTML = generateMenu();
+    document.getElementById("footer").innerHTML = generateFooter();
 
     async function GetPlayers(event){
 
-        var remPlayersHtml = document.querySelectorAll('.players-by-position');
+        let remPlayersHtml = document.querySelectorAll('.players-by-position');
         for (const rem of remPlayersHtml) {
             rem.remove();
         }
 
-        var filterCountry = "";
-        var posiblePlayers = "";
+        let filterCountry = "";
+        let posiblePlayers = "";
         if(this.dataset != undefined){
             filterCountry = this.dataset.buttonFilter;
             posiblePlayers = this.dataset.posiblePlayers;
@@ -26,28 +28,26 @@ window.addEventListener('DOMContentLoaded', function(event){
             if(response.status == 200){
                 let data = await response.json();
 
-                var day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
-                var name = data.map(g => `<p class="name">${g.name}</p>`);
-                var country = data.map(g => g.country);
-                var shirt = data.map(g => `<p class="number">${g.shirt}</p>`);
-                var pos = data.map(g => `<p class="position">${g.generalPosition}</p>`);
-                var generalPosition = data.map(g => g.generalPosition);
-                var playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
-                var playerId = data.map(g => g.id);
+                let name = data.map(g => `<p class="name">${g.name}</p>`);
+                let shirt = data.map(g => `<p class="number">${g.shirt}</p>`);
+                let pos = data.map(g => `<p class="position">${g.generalPosition}</p>`);
+                let generalPosition = data.map(g => g.generalPosition);
+                let playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
+                let playerId = data.map(g => g.id);
 
 
-                var position =['Arquero', 'Defensa', 'Mediocampo', 'Ataque'];
-                var fullContent = "";
-                var playersContent = "";
-                var counter = 0;
+                let position =['Arquero', 'Defensa', 'Mediocampo', 'Ataque'];
+                let fullContent = "";
+                let playersContent = "";
+                let counter = 0;
 
-                for(var i = 0; i < 4; i++){
+                for(let i = 0; i < 4; i++){
                     
                     while(counter < playerId.length){
 
                         if(position[i] == generalPosition[counter]){
 
-                            var contentBox= `<div class="player">
+                            let contentBox= `<div class="player">
                                                 <div class="data-player">
                                                     <img src="${playerImage[counter]}" alt="">
                                                     <div class="data">
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                         counter=counter+1;
                     }
                     if(playersContent != ""){
-                        var contentPositionContainer =  `<div class="players-by-position">
+                        let contentPositionContainer =  `<div class="players-by-position">
                                                             <div class="position-panel"><p>${position[i]}</p></div>
                                                             <div class="list-players">
                                                                 ${playersContent}
@@ -100,11 +100,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
@@ -112,8 +112,8 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function DeletePlayer(event){
         
-        var r = confirm("Are you sure you want to delete it?");
-        if (r == true) {
+        let result = confirm("Are you sure you want to delete it?");
+        if (result) {
             let playerId = this.dataset.deletePlayerId;
             let url = `http://localhost:5500/api/player/${playerId}`;
             fetch(url, { 
