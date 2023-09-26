@@ -11,25 +11,23 @@ window.addEventListener('DOMContentLoaded', function(event){
                 let data = await response.json();
 
                 let type = data.map(r => `<p class="type-transfer-literal">${r.type}</p>`);
-                var currency = data.map(r => `<div class="currency"><p>${r.currency}</p></div>`);
-                var price = data.map(r => `<div class="price"><p>${r.price}</p></div>`);
-                var playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
-                var teamImage = data.map(g => g.targetTeamPath? `${baseRawUrl}/${g.targetTeamPath}` : "");
-                var targetTeam = data.map(r => `<div class="target-team-name"><p>${r.targetTeam}</p></div>`);
-                var playerName = data.map(r => `<div class="player-transfer-name"><p>${r.playerName}</p></div>`);
-                var transfer = data.map(r => r.transfer);
-                var rumorId = data.map(r => r.id);
-                var playerId = data.map(r => r.playerId);
+                let currency = data.map(r => `<div class="currency"><p>${r.currency}</p></div>`);
+                let price = data.map(r => `<div class="price"><p>${r.price}</p></div>`);
+                let playerImage = data.map(g => g.playerPath? `${baseRawUrl}/${g.playerPath}` : "");
+                let teamImage = data.map(g => g.targetTeamPath? `${baseRawUrl}/${g.targetTeamPath}` : "");
+                let targetTeam = data.map(r => `<div class="target-team-name"><p>${r.targetTeam}</p></div>`);
+                let playerName = data.map(r => `<div class="player-transfer-name"><p>${r.playerName}</p></div>`);
+                let transfer = data.map(r => r.transfer);
+                let rumorId = data.map(r => r.id);
+                let inOutImage;
+                let fullContent = "";
 
-                var inOutImage;
-                var fullContent = "";
-
-                for(var i = 0; i < transfer.length; i++){
+                for(let i = 0; i < transfer.length; i++){
                     switch(transfer[i]){
                         case "Salida":{inOutImage = "./Images/Otros/salida.gif";break}
                         case "Llegada":{inOutImage = "./Images/Otros/llegada.gif";break}
                     }
-                    var transfersContent=   `<div class="transfer-buttons">
+                    let transfersContent=   `<div class="transfer-buttons">
                                             <div class="transfer">
                                                 <div class="transfer-header">
                                                     ${price[i]}
@@ -77,11 +75,11 @@ window.addEventListener('DOMContentLoaded', function(event){
                 }
 
             } else {
-                var errorText = await response.text();
+                let errorText = await response.text();
                 alert(errorText);
             }
         } catch(error){
-            var errorText = await error.text();
+            let errorText = await error.text();
             alert(errorText);
         }
     }
@@ -89,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function DeleteRumor(event){
         
-        var r = confirm("Are you sure you want to delete it?");
+        let r = confirm("Are you sure you want to delete it?");
         if (r == true) {
             let rumorId = this.dataset.deleteRumorId;
             let url = `http://localhost:5500/api/rumor/${rumorId}`;
@@ -107,7 +105,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     function ConfirmRumor(event){
         
-        var r = confirm("Are you sure you want to confirm it?");
+        let r = confirm("Are you sure you want to confirm it?");
         if (r == true) {
             let rumorId = this.dataset.confirmRumorId;
             let url = `http://localhost:5500/api/rumor?rumorId=${rumorId}&confirmRumor=true`;
@@ -118,7 +116,7 @@ window.addEventListener('DOMContentLoaded', function(event){
                     alert('Rumor comes true.');
                 }
             });
-            var typeTransfer = this.dataset.typeTransfer;
+            let typeTransfer = this.dataset.typeTransfer;
             if(typeTransfer == "Llegada"){
                 location.reload();
                 window.location.href = "players.html";
