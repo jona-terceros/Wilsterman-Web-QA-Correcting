@@ -85,10 +85,9 @@ window.addEventListener('DOMContentLoaded', function(event){
     }
 
 
-    function DeleteRumor(event){
-        
+    function DeleteRumor(event) {
         let r = confirm("Are you sure you want to delete it?");
-        if (r == true) {
+        if (r) {
             let rumorId = this.dataset.deleteRumorId;
             let url = `http://localhost:5500/api/rumor/${rumorId}`;
             fetch(url, { 
@@ -101,12 +100,14 @@ window.addEventListener('DOMContentLoaded', function(event){
             location.reload();
         } 
     }
+    
+    
 
 
     function ConfirmRumor(event){
         
         let r = confirm("Are you sure you want to confirm it?");
-        if (r == true) {
+        if (r) {
             let rumorId = this.dataset.confirmRumorId;
             let url = `http://localhost:5500/api/rumor?rumorId=${rumorId}&confirmRumor=true`;
             fetch(url, { 
