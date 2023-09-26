@@ -1,11 +1,6 @@
 window.addEventListener('DOMContentLoaded', function(event){
 
-    let resultAndGame = []
     const baseRawUrl = 'http://localhost:5500';
-    const baseUrl = `${baseRawUrl}/api`;
-
-
-
     async function GetResultAndNextGame(){
         const url = `http://localhost:5500/api/game?twoGamesOnly=true`;
         let response = await fetch(url);
@@ -28,8 +23,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 var tournament = data.map(g => g.tournament);
                 var gameId = data.map(g => g.id);
                 var monthText = data.map(g => g.month);
-                var tournamentImage;
-                var tournamentImage2;
 
 
                 var contentResult = `<div class="result-header">
