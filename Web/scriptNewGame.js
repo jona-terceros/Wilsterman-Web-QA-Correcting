@@ -1,5 +1,10 @@
+import generateFooter from "./Components/footerComponent.js";
+import generateMenu from "./Components/menuComponent.js";
+
 window.addEventListener('DOMContentLoaded', function(event){
 
+    document.getElementById("menu").innerHTML = generateMenu();
+    document.getElementById("footer").innerHTML = generateFooter();
 
     const queryParams = window.location.search.split('?');
     let gameId = "";
