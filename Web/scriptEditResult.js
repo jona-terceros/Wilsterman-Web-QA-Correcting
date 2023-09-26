@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let  queryParams = window.location.search.split('&');
     let type = queryParams[0].split('=')[1];
-    let gameId = queryParams[1].split('=')[1];
- 
+    let gameId;
+    
+    const daysSelect = document.getElementById("day");
+    const dayWeekSelect = document.getElementById("day-week");
+    const monthSelect = document.getElementById("month");
+    const tournamentSelect = document.getElementById("tournament");
+
 
     if(type == "edit"){
         GetResultNormal();
@@ -17,8 +22,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         document.getElementById('form-box').addEventListener('submit', UpdatePlayGame);
     }
+  
+    if (queryParams[1]) {
+        gameId = queryParams[1].split('=')[1];
+      } else {
+        console.error("El queryParams[1] es undefined o no contiene los datos esperados");
+      }
         
     const baseRawUrl = 'http://localhost:5500';
+    const daysArray = Array.from({ length: 31 }, (_, i) => (i + 1).toString().padStart(2, "0"));
+    
+    async function generateOptions(select, optionsArray) {
+            for (const optionText of optionsArray) {
+                const option = document.createElement("option");
+                option.text = optionText;
+                select.appendChild(option);
+            }
+            
+    }
+    
+    generateOptions(daysSelect, daysArray);
+    generateOptions(dayWeekSelect, ["Lunes", "Martes", "Miércoles","Jueves","Viernes","Sabado","Domingo"]);
+    generateOptions(monthSelect, ["Enero", "Febrero", "Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]);
+    generateOptions(tournamentSelect, ["Liga Boliviana", "Copa Sudamericana", "Amistoso"]);
 
     async function GetResultNormal(event){
 
