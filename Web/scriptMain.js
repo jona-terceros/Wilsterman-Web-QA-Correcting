@@ -180,10 +180,10 @@ window.addEventListener('DOMContentLoaded', function(event){
     
     function tournamentPathImage(tournament){
         switch(tournament){
-            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";break}
-            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";break}
-            case "Amistoso":{return "./Images/Tournaments/amistoso.png";break}
-            default:{return "./Images/Tournaments/Liga Boliviana.png";break}
+            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";}
+            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";}
+            case "Amistoso":{return "./Images/Tournaments/amistoso.png";}
+            default:{return "./Images/Tournaments/Liga Boliviana.png";}
         }
     }
 
