@@ -1,6 +1,12 @@
+import generateFooter from "./Components/footerComponent.js";
+import generateMenu from "./Components/menuComponent.js";
+import fetchUpdate from "./Repository/fetchUpdate.js";
+
 document.addEventListener('DOMContentLoaded', (event) => {
 
-
+    document.getElementById("menu").innerHTML = generateMenu();
+    document.getElementById("footer").innerHTML = generateFooter();
+    
     let  queryParams = window.location.search.split('&');
     let type = queryParams[0].split('=')[1];
     let gameId;
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         gameId = queryParams[1].split('=')[1];
       } else {
         console.error("El queryParams[1] es undefined o no contiene los datos esperados");
-      }
+    }
         
     const baseRawUrl = 'http://localhost:5500';
     const daysArray = Array.from({ length: 31 }, (_, i) => (i + 1).toString().padStart(2, "0"));
@@ -224,26 +230,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         const gameJson = JSON.stringify(gameToUpdate);
         let url = `http://localhost:5500/api/game/${gameId}`;
-        
-        fetch(url, {
-            headers: { "Content-Type": "application/json; charset=utf-8" },
-            method: 'PUT',
-            body: gameJson
-        }).then((response) => {
-            if (response.status === 200) {
-                alert("Game updated successfuly");
-                window.location.href = "result.html";
-            } 
-            else{
-                response.text().then((data) => {
-                    debugger;
-                    console.log(data);
-                });
-            }
-        }).catch((response) => {
-                debugger;
-                console.log(data);
-        });
+        let alertMessage = "Game updated successfuly.";
+        let locationHTML = "result.html";
+        fetchUpdate(url,gameJson,alertMessage,locationHTML,data);
+       
 
     }
 

@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', function(event){
 
     document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
+    
     const baseRawUrl = 'http://localhost:5500';
 
     async function GetGames(event){
