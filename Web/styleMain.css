@@ -53,7 +53,7 @@ li a {
 li a:hover {
     opacity: 1;
     border-bottom-style: solid;
-    border-bottom-width: 2px; /* Establece el ancho del borde a 2px */
+    border: 2px;
     border-color: white;
 }
 
@@ -188,9 +188,7 @@ ________________________________________________________________________________
     border-radius: 8%;
 }
 
-.result-header {
-    display: flex;
-    flex-direction: row;
+.result-header{
     background-color: rgb(134, 25, 17);
     width: 400px;
     height: 45px;
@@ -229,12 +227,16 @@ ________________________________________________________________________________
     width: 240px;
 }
 
+.result-header{
+    display: flex;
+    flex-direction: row;
+}
+
 .date-day-month{
     display: flex;
     flex-direction: column;
     margin-left: 5px;
     color: white;
-    padding: 5px;
 }
 
 .date-day P{
@@ -244,6 +246,10 @@ ________________________________________________________________________________
     height: 35px;
     width: 35px;
     padding: 0px 10px 0px 10px;
+}
+
+.date-day-month{
+    padding: 5px;
 }
 
 .date-day-literal p{
@@ -270,17 +276,17 @@ ________________________________________________________________________________
     margin-bottom: 6px;
 }
 
-.result-hour {
+.result-hour{
     display: flex;
-    align-items: center; /* Alinea verticalmente en el centro */
+    align-items: stretch;
     width: 90px;
     height: 45px;
+    align-items: center;
     background-color: rgb(134, 25, 17);
-    background-image: linear-gradient(rgb(207, 40, 29), rgb(9, 64, 100));
+    background-image: linear-gradient(rgb(207, 40, 29),rgb(9, 64, 100));
     color: white;
     border-radius: 15px;
 }
-
 
 .local-goals, .away-goals, .versus, .hour, .minute, .two-points{
     font-size: 35px;
@@ -514,6 +520,9 @@ ________________________________________________________________________________
 .actors-transfer{
     display: flex;
     flex-direction: row;
+}
+
+.actors-transfer{
     margin-top: 10px;
 }
 
@@ -608,15 +617,10 @@ ________________________________________________________________________________
     padding-top: 260px;
 }
 
-.position-player {
-    width: 296px; /* Agrega 'px' para píxeles */
+.position-player{
+    width: 296;
     text-align: center;
-    font-size: 18px;
-    font-family: "Helvetica", sans-serif; /* Asegúrate de usar comillas y minúsculas en 'sans-serif' */
-    font-weight: bold;
-    padding-top: 5px;
 }
-
 
 .number-player{
     font-size: 30px;
@@ -642,6 +646,15 @@ ________________________________________________________________________________
     transform: translate(0%, -330px);
     transition: .5s ease;
 }
+
+.position-player{
+    font-size: 18px;
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+
 
 /*______________________________________________________________________________________________________________________
 _______________________________________________________________FOOTER___________________________________________________
