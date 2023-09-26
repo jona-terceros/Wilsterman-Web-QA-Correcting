@@ -1,33 +1,27 @@
 import generateFooter from "./Components/footerComponent.js";
 import generateMenu from "./Components/menuComponent.js";
+import {convertTextMonth, tournamentPathImage} from "./Repository/extraFunctions.js";
 
 window.addEventListener('DOMContentLoaded', function(event){
-
     document.getElementById("menu").innerHTML = generateMenu();
     document.getElementById("footer").innerHTML = generateFooter();
     
     const baseRawUrl = 'http://localhost:5500';
-
     async function GetGames(event){
-
         const remGamesHtml = document.querySelectorAll('.month-game');
         for (const rem of remGamesHtml) {
             rem.remove();
         }
-
         let filterTournament = "";
         if(this.dataset != undefined){
             filterTournament = this.dataset.buttonFilter;
         }
-
         const url = `http://localhost:5500/api/game?finish=Pendiente&tournament=${filterTournament}`;
         let response = await fetch(url);
         let errorText;
         try{
             if(response.status == 200){
                 let data = await response.json();
-
-
                 const day = data.map(g => `<div class="date-day"><p>${g.day}</p></div>`);
                 const dayWeek = data.map(g => `<div class="date-day-literal"><p>${g.dayWeek}</p></div>`);
                 const monthText = data.map(g => g.month);
@@ -41,7 +35,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                 const timeMatch = data.map(g => `<div class="hour"><p>${g.hour}</p></div><div class="two-points"><p>:</p></div><div class="minute"><p>${g.minutes}</p></div>`);
                 const tournament = data.map(g => g.tournament);
                 const gameId = data.map(g => g.id);
-
                 const listMonths = [];
                 let newMonth = "";
                 let i;
@@ -51,15 +44,12 @@ window.addEventListener('DOMContentLoaded', function(event){
                         listMonths.push(newMonth);
                     }
                 }
-
                 let gamesByMonth = "";
                 let fullContent = "";
                 let counter = 0;
            
                 for(i = 0; i < listMonths.length; i++){
-
                     while(counter < monthText.length && listMonths[i] == monthText[counter]){
-
                         let contentGame=`<div class="game-buttons" title~="${i}">
                                             <div class="game">
                                                 <div class="game-header">
@@ -104,7 +94,6 @@ window.addEventListener('DOMContentLoaded', function(event){
                                                 </button>
                                             </div>
                                         </div>`;
-
                         gamesByMonth = gamesByMonth+contentGame;
                         counter=counter+1;
                     }
@@ -122,17 +111,14 @@ window.addEventListener('DOMContentLoaded', function(event){
                 for (const button of deleteButtons) {
                     button.addEventListener('click', DeleteGame);
                 }
-
                 let editButtons = document.querySelectorAll('[data-edit-game-id]'); //Delete
                 for (const button of editButtons) {
                     button.addEventListener('click', goToEditGame);
                 }
-
                 let playButtons = document.querySelectorAll('[data-play-game-id]'); //Play
                 for (const button of playButtons) {
                     button.addEventListener('click', goToPlay);
                 }
-
             } else {
                 errorText = await response.text();
                 alert(errorText);
@@ -142,9 +128,6 @@ window.addEventListener('DOMContentLoaded', function(event){
             alert(errorText);
         }
     }
-
-
-
     function DeleteGame(event){
         
         let r = confirm("Are you sure you want to delete it?");
@@ -161,57 +144,22 @@ window.addEventListener('DOMContentLoaded', function(event){
             location.reload();
         } 
     }
-
     function goToEditGame(event){
         let gameId = this.dataset.editGameId;
         window.location.href = `newGame.html?gameId=${gameId}`;
     }
-
     function goToPlay(event){
         let gameId = this.dataset.playGameId;
         window.location.href = `editResults.html?type=play&gameId=${gameId}`;
     }
-
-    function convertTextMonth(month){
-        switch(month){
-            case '01':return 'Enero';
-            case '02':return 'Febrero';
-            case '03':return 'Marzo';
-            case '04':return 'Abril';
-            case '05':return 'Mayo';
-            case '06':return 'Junio';
-            case '07':return 'Julio';
-            case '08':return 'Agosto';
-            case '09':return 'Septiembre';
-            case '10':return 'Octubre';
-            case '11':return 'Noviembre';
-            case '12':return 'Diciembre';
-        }
-    }
-
-    function tournamentPathImage(tournament){
-        switch(tournament){
-            case "Copa Sudamericana":{return "./Images/Tournaments/Copa Sudamericana.png";}
-            case "Liga Boliviana":{return "./Images/Tournaments/Liga Boliviana.png";}
-            case "Amistoso":{return "./Images/Tournaments/amistoso.png";}
-            default:{return "./Images/Tournaments/Liga Boliviana.png";}
-        }
-    }
-
-
+    
     function CreatePlayer(event){
         window.location.href = "newGame.html";
     }
-
-
     GetGames();
-
     let buttons = document.querySelectorAll('[data-button-filter]');
     for (const button of buttons) {
         button.addEventListener('click', GetGames);
     }
-
     document.querySelector('.add-game').addEventListener('click', CreatePlayer);
-
 });
-
