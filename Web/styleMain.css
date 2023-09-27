@@ -52,8 +52,8 @@ li a {
 
 li a:hover {
     opacity: 1;
-    border-bottom-style: solid;
     border: 2px;
+    border-bottom-style: solid;
     border-color: white;
 }
 
@@ -193,6 +193,8 @@ ________________________________________________________________________________
     width: 400px;
     height: 45px;
     border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: row;
 }
 
 .tournament {
@@ -227,16 +229,12 @@ ________________________________________________________________________________
     width: 240px;
 }
 
-.result-header{
-    display: flex;
-    flex-direction: row;
-}
-
 .date-day-month{
     display: flex;
     flex-direction: column;
     margin-left: 5px;
     color: white;
+    padding: 5px;
 }
 
 .date-day P{
@@ -246,10 +244,6 @@ ________________________________________________________________________________
     height: 35px;
     width: 35px;
     padding: 0px 10px 0px 10px;
-}
-
-.date-day-month{
-    padding: 5px;
 }
 
 .date-day-literal p{
@@ -278,7 +272,6 @@ ________________________________________________________________________________
 
 .result-hour{
     display: flex;
-    align-items: stretch;
     width: 90px;
     height: 45px;
     align-items: center;
@@ -520,9 +513,6 @@ ________________________________________________________________________________
 .actors-transfer{
     display: flex;
     flex-direction: row;
-}
-
-.actors-transfer{
     margin-top: 10px;
 }
 
@@ -620,6 +610,10 @@ ________________________________________________________________________________
 .position-player{
     width: 296;
     text-align: center;
+    font-size: 18px;
+    font-family: "Helvetica",Sans-serif;
+    font-weight: bold;
+    padding-top: 5px;
 }
 
 .number-player{
@@ -646,15 +640,6 @@ ________________________________________________________________________________
     transform: translate(0%, -330px);
     transition: .5s ease;
 }
-
-.position-player{
-    font-size: 18px;
-    font-family: "Helvetica",Sans-serif;
-    font-weight: bold;
-    padding-top: 5px;
-}
-
-
 
 /*______________________________________________________________________________________________________________________
 _______________________________________________________________FOOTER___________________________________________________
